@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  open_time: 2015-09-29 16:27:09
+  close_time: 2015-09-29 16:27:09
+  flight_id: 
+
+two:
+  open_time: 2015-09-29 16:27:09
+  close_time: 2015-09-29 16:27:09
+  flight_id: 

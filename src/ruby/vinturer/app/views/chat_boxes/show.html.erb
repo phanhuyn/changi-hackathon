@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Open time:</strong>
+  <%= @chat_box.open_time %>
+</p>
+
+<p>
+  <strong>Close time:</strong>
+  <%= @chat_box.close_time %>
+</p>
+
+<p>
+  <strong>Flight:</strong>
+  <%= @chat_box.flight %>
+</p>
+
+<%= link_to 'Edit', edit_chat_box_path(@chat_box) %> |
+<%= link_to 'Back', chat_boxes_path %>
