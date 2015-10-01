@@ -10,6 +10,7 @@ class FlightsController < ApplicationController
   # GET /flights/1
   # GET /flights/1.json
   def show
+    render json: @flight.to_json(:include => {:chat_box => {:include => :comments}})
   end
 
   # GET /flights/new
