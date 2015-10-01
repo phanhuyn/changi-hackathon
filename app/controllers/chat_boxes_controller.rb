@@ -10,6 +10,7 @@ class ChatBoxesController < ApplicationController
   # GET /chat_boxes/1
   # GET /chat_boxes/1.json
   def show
+    render json: @chat_box.to_json(:include => :comments)
   end
 
   # GET /chat_boxes/new
