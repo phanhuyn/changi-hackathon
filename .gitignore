@@ -36,3 +36,4 @@ pickle-email-*.html
 # Ignore pow environment settings
 .powenv
 .DS_Store
+*.swp
