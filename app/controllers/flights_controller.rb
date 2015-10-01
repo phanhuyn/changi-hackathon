@@ -1,9 +1,32 @@
 class FlightsController < ApplicationController
   before_action :set_flight, only: [:show, :edit, :update, :destroy]
+  include HTTParty
 
   # GET /flights
   # GET /flights.json
   def index
+    url = 'https://flifo-qa.api.aero/flifo/v3/flights/sin/d'
+    headers = {'X-apiKey' => '2cfd0827f82ceaccae7882938b4b1627', 'Accept' => 'application/json'}
+    response = HTTParty.get(url, headers: headers) 
+    response['flightRecord'].each do |record|
+        new_flight = Flight.new({
+            :number => record["operatingCarrier"]["flightNumber"],
+            :scheduled => record["scheduled"],
+            :status => record['status'],
+            :aircraft => record['aircraft'],
+            :city => record['city'],
+            :airportCode => record['airportCode'],
+            :terminal => record['terminal'],
+            :adi => 'd'
+        })
+        new_flight.save()
+    end
+    #puts 'Here'
+    #puts response['flightRecord']
+    #flight = Flight.new({
+        #:airportCode => response['flightRecord'][0]['airportCode']
+    #})
+    #flight.save()
     @flights = Flight.all
   end
 
