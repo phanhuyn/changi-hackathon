@@ -1,1 +1,1 @@
-json.extract! @flight, :id, :number, :scheduled, :created_at, :updated_at
+json.extract! @flight, :id, :airlineCode, :number, :gate, :city, :adi, :scheduled, :created_at, :updated_at
