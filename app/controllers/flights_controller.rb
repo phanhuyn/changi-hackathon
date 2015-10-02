@@ -10,6 +10,7 @@ class FlightsController < ApplicationController
     response = HTTParty.get(url, headers: headers) 
     response['flightRecord'].each do |record|
         new_flight = Flight.new({
+            :airlineCode => record["operatingCarrier"]["airlineCode"],
             :number => record["operatingCarrier"]["flightNumber"],
             :scheduled => record["scheduled"],
             :status => record['status'],
