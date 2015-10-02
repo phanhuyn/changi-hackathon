@@ -34,6 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'sprockets', '2.12.3'
 gem 'angular-rails-templates'
 gem 'httparty'
+gem 'rufus-scheduler'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
