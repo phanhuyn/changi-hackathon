@@ -5,34 +5,10 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    url = 'https://flifo-qa.api.aero/flifo/v3/flights/sin/d'
-    headers = {'X-apiKey' => '2cfd0827f82ceaccae7882938b4b1627', 'Accept' => 'application/json'}
-    response = HTTParty.get(url, headers: headers) 
-    response['flightRecord'].each do |record|
-        new_flight = Flight.new({
-            :airlineCode => record["operatingCarrier"]["airlineCode"],
-            :number => record["operatingCarrier"]["flightNumber"],
-            :scheduled => record["scheduled"],
-            :status => record['status'],
-            :aircraft => record['aircraft'],
-            :city => record['city'],
-            :airportCode => record['airportCode'],
-            :terminal => record['terminal'],
-            :adi => 'd'
-        })
-        new_flight.save()
-    end
-    #puts 'Here'
-    #puts response['flightRecord']
-    #flight = Flight.new({
-        #:airportCode => response['flightRecord'][0]['airportCode']
-    #})
-    #flight.save()
     @flights = Flight.all
   end
 
-  # GET /flights/1
-  # GET /flights/1.json
+  # GET /flights/1 GET /flights/1.json
   def show
     render json: @flight.to_json(:include => {:chat_box => {:include => :comments}})
   end
@@ -94,6 +70,6 @@ class FlightsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
-      params.require(:flight).permit(:number, :scheduled)
+      params.require(:flight).permit(:number, :scheduled, :airlineCode)
     end
 end
