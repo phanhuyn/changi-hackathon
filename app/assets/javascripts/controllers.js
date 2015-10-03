@@ -1,7 +1,7 @@
 (function() {
-    angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams'
+    angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams',
         function ($scope, Flight, ChatService, ChatBox, $stateParams){
-        $scope.test = $stateParams.flightNumber;
+        $scope.test = $stateParams.flight;
         console.log($scope.test);
         $scope.inputFlight = function(){
             Flight.query({flight_number: $scope.flightNumber}, function(flight){
@@ -10,8 +10,7 @@
             });
         };
         $scope.hide = true;
-        $scope.toggleChatBox = function() {
-            $scope.hide = !$scope.hide;
+        $scope.toggleChatBox = function() { $scope.hide = !$scope.hide;
         }
     }]);
     angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', '$timeout',

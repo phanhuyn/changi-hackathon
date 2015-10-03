@@ -8,16 +8,15 @@
               controller: 'WelcomeController'
             })
             .state('main', {
-              url: '/main/:flightNumber',
-              templateUrl: 'main.html',
-              controller: 'MainController'
+                url: '/main/:flight',
+                templateUrl: 'main.html',
+                controller: 'MainController'
             })
             .state('test', {
               url: '/test',
               templateUrl: 'test.html',
               controller: 'MainController'
-            })
-            .state();
+            });
             $urlRouterProvider.otherwise('home');
         }]);
 })();
