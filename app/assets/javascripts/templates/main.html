@@ -1,123 +1,114 @@
 <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-    <!-- Navigation Bar -->
-    <header class="fixed-header">
-        <nav>
-            <div class="nav-wrapper container">
-                <a href="#!" class="brand-logo">
-                    <img class="logo-image" src="/assets/vinturer.png" alt="Team Vinturer">
-                </a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                    <li><a href="index.html">Sign Out</a></li>
-                    <li><a href="#.html">About Us</a></li>
-                    <li><a href="main.html">Refresh</a></li>
-                </ul>
-                <ul class="right hide-on-large-only">
-                    <li>
-                        <a href="main.html" class="button-collapse _alt">
-                            <i class="material-icons">repeat</i>
-                        </a>
-                    </li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li><a href="index.html">Sign Out</a></li>
-                    <li><a href="#.html">About Us</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <!-- Main Body -->
-    <main>
-        <div class="activity">
-            <div class="index-banner flight-banner">
-                <!-- <ul class="cb-slideshow">
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-        <li><span></span></li>
-    </ul> -->
-                <h3 class="text-bold shadow">VN663</h3>
-                <h4 class="text-bold shadow">
-        SIN
-        <span class="icon icon-flight"></span>
-        HAN
-    </h4>
-                <div>
-                    Time: 16.30PM | Gate: T4
-                </div>
-            </div>
-            <div class="departure-timeline">
-                <h6 class="text-light">YOUR TIMELINE</h6>
-                <br>
-                <ol class="timeline">
-                    <li class="timeline__step done">
-                        <input class="timeline__step-radio" id="trigger1{{identifier}}" name="trigger{{identifier}}" type="radio">
-                        <label class="timeline__step-label" for="trigger1{{identifier}}">
-                            <span class="timeline__step-content">
-                    12 May 2013
-                </span>
-                        </label>
-                        <span class="timeline__step-title">
-                Check-in</span>
-                        <i class="timeline__step-marker">1</i>
-                    </li>
-                    <li class="timeline__step done">
-                        <input class="timeline__step-radio" id="trigger2{{identifier}}" name="trigger{{identifier}}" type="radio">
-                        <label class="timeline__step-label" for="trigger2{{identifier}}">
-                            <span class="timeline__step-content">
-                        14 May 2013</span>
-                        </label>
-                        <span class="timeline__step-title">
-                        Immigration Check</span>
-                        <i class="timeline__step-marker">2</i>
-                    </li>
-                    <li class="timeline__step">
-                        <input class="timeline__step-radio" id="trigger3{{identifier}}" name="trigger{{identifier}}" type="radio">
-                        <label class="timeline__step-label" for="trigger3{{identifier}}">
-                            <span class="timeline__step-content">
-                                15 May 2013</span>
-                        </label>
-                        <span class="timeline__step-title">
-                                Boarding</span>
-                        <i class="timeline__step-marker">3</i>
-                    </li>
-                    <li class="timeline__step">
-                        <input class="timeline__step-radio" id="trigger4{{identifier}}" name="trigger{{identifier}}" type="radio">
-                        <label class="timeline__step-label" for="trigger4{{identifier}}">
-                            <span class="timeline__step-content">
-                                        16 May 2013</span>
-                        </label>
-                        <span class="timeline__step-title">
-                                        Enjoy<br>your flight!</span>
-                        <i class="timeline__step-marker">4</i>
-                    </li>
-                </ol>
-            </div>
-            <div class="row">
-                <div class="col s12">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="/assets/place1.jpg">
-                            <span class="card-title">Duty Free Shopping</span>
-                        </div>
-                        <div class="card-content">
-                            <p>One of the best parts of travelling is Duty Free shopping while waiting for your flight. At Changi Airport, you’ll get to enjoy prices cheaper than anywhere else in town. If you have just two hours to spare, maximise your time at our Duty Free favourites: Cosmetics & Perfumes by Shilla, Liquor & Tobacco by DFS and Electronics & Computers by Sprint-Cass.</p>
-                        </div>
-                        <div class="card-action">
-                            <a href="#">This is a link</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
 
+<!-- Navigation Bar -->
+<header class="fixed-header">
+    <nav>
+        <div class="nav-wrapper container">
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="index.html">Sign Out</a></li>
+                <li><a href="#.html">About Us</a></li>
+                <li><a href="main.html">Refresh</a></li>
+            </ul>
+            <ul class="right hide-on-large-only">
+                <li>
+                    <a href="main.html" class="button-collapse _alt">
+                        <i class="material-icons">repeat</i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="index.html">Sign Out</a></li>
+                <li><a href="#.html">About Us</a></li>
+            </ul>
         </div>
+    </nav>
+</header>
+<!-- Main Body -->
+<main>
+    
+    <!-- Timeline Pages -->
+    <div class="activity">
+        <div class="activity">           
+
+        <div class="index-banner flight-banner">
+            <h3 class="text-bold shadow">{{flight.airlineCode}}{{flight.number}}</h3>
+            <h4 class="text-bold shadow">
+                SIN
+                <span class="icon icon-flight"></span>
+                HAN
+            </h4>
+            <div>
+                Time: 16.30PM | Gate: T4
+            </div>
         </div>
-        <section class="chatbox" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
-            <!-- <header class="top-bar">
+
+        <!-- Travel Timeline -->
+        <div class="departure-timeline">
+            <!-- <h6 class="text-light">YOUR TIMELINE</h6> -->
+                            <form id="msform">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                        <li class="active">Start you journey</li>
+                        <li>Check in</li>
+                        <li>Security Check</li>
+                        <li>Boarding</li>
+                        <li>Enjoy your flight!</li>
+                    </ul>
+                    <!-- fieldsets -->
+                    <fieldset>
+                        <h2 class="fs-title">Create your account</h2>
+                        <h3 class="fs-subtitle">This is step 1</h3>
+                        <input type="text" name="email" placeholder="Email" />
+                        <input type="password" name="pass" placeholder="Password" />
+                        <input type="password" name="cpass" placeholder="Confirm Password" />
+                        <input type="button" name="next" class="next action-button btn" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Social Profiles</h2>
+                        <h3 class="fs-subtitle">Your presence on the social network</h3>
+                        <input type="text" name="twitter" placeholder="Twitter" />
+                        <input type="text" name="facebook" placeholder="Facebook" />
+                        <input type="text" name="gplus" placeholder="Google Plus" />
+                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
+                        <input type="button" name="next" class="next action-button btn" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Social Profiles</h2>
+                        <h3 class="fs-subtitle">Your presence on the social network</h3>
+                        <input type="text" name="twitter" placeholder="Twitter" />
+                        <input type="text" name="facebook" placeholder="Facebook" />
+                        <input type="text" name="gplus" placeholder="Google Plus" />
+                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
+                        <input type="button" name="next" class="next action-button btn" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Social Profiles</h2>
+                        <h3 class="fs-subtitle">Your presence on the social network</h3>
+                        <input type="text" name="twitter" placeholder="Twitter" />
+                        <input type="text" name="facebook" placeholder="Facebook" />
+                        <input type="text" name="gplus" placeholder="Google Plus" />
+                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
+                        <input type="button" name="next" class="next action-button btn" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                        <h2 class="fs-title">Personal Details</h2>
+                        <h3 class="fs-subtitle">We will never sell it</h3>
+                        <input type="text" name="fname" placeholder="First Name" />
+                        <input type="text" name="lname" placeholder="Last Name" />
+                        <input type="text" name="phone" placeholder="Phone" />
+                        <textarea name="address" placeholder="Address"></textarea>
+                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
+                        <!-- <input type="submit" name="submit" class="submit action-button btn" value="Submit" /> -->
+                    </fieldset>
+                </form>
+        </div>
+    </div>
+    
+    <section class="chatbox" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
+        <!-- <header class="top-bar">
                 <div class="left">
                     <h1>FlightTalk</h1>
                 </div>
@@ -125,58 +116,53 @@
                     <i class="small material-icons">chat</i>
                 </div>
             </header> -->
-            <ol class="discussion">
-                <li ng-repeat='comment in comments' ng-class="comment.user.id==user.id?'self':'other'">
-                    <div class="avatar">
-                        <img src="/assets/avatar.png" />
-                    </div>
-                    <div class="messages">
-                        <p>{{comment.content}}</p>
-                        <time datetime="2009-11-13T20:00">{{comment.user.name}} • 51 min</time>
-                    </div>
-                </li>
-            </ol>
-            <div class="row message-input" ng-hide='user'>
-                <div class='message-text'>
-                    <div class="input-field col s12">
-                        <input type="text" ng-model='username'>
-                        <label for="">Your Name</label>
-                    </div>
+        <ol class="discussion">
+            <li ng-repeat='comment in comments' ng-class="comment.user.id==user.id?'self':'other'">
+                <div class="avatar">
+                    <img src="/assets/avatar.png" />
                 </div>
-                <button class="btn waves-effect waves-light message-send" type="submit" name="action" 
-                        ng-click='addUser()'>OK
-                    <i class="material-icons right">send</i>
-                </button>
-            </div>
-            <div class="row message-input">
-                <div class="message-text">
-                    <div class="input-field col s12">
-                        <input id="" type="text" class="" ng-model='newComment'>
-                        <label for="">Your Message</label>
-                    </div>
+                <div class="messages">
+                    <p>{{comment.content}}</p>
+                    <time datetime="2009-11-13T20:00">{{comment.user.name}} • 51 min</time>
                 </div>
-                <button class="btn waves-effect waves-light message-send" type="submit" name="action" 
-                        ng-click='addComment()'>SEND
-                    <i class="material-icons right">send</i>
-                </button>
-            </div>
-        </section>
-    </main>
-
-    <!-- Chatbox Footer -->
-    <footer class="page-footer fixed-footer">
-        <div class="row no-margin">
-            <div class="col s10">
-                <div class="chatbox-description">
-                    Know more about your flightmate!
+            </li>
+        </ol>
+        <div class="row message-input" ng-hide='user'>
+            <div class='message-text'>
+                <div class="input-field col s12">
+                    <input type="text" ng-model='username'>
+                    <label for="">Your Name</label>
                 </div>
             </div>
-            <div class="col s2 no-padding">
-                <button id="chatbox-toggle" class="btn waves-effect waves-light transparent chatbox-button" ng-click="toggleChatBox()">
-                    <i class="medium material-icons">chat</i>
-                </button>
+            <button class="btn waves-effect waves-light message-send" type="submit" name="action" ng-click='addUser()'>OK
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+        <div class="row message-input">
+            <div class="message-text">
+                <div class="input-field col s12">
+                    <input id="" type="text" class="" ng-model='newComment'>
+                    <label for="">Your Message</label>
+                </div>
+            </div>
+            <button class="btn waves-effect waves-light message-send" type="submit" name="action" ng-click='addComment()'>SEND
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
+    </section>
+</main>
+<!-- Chatbox Footer -->
+<footer class="page-footer fixed-footer">
+    <div class="row no-margin">
+        <div class="col s10">
+            <div class="chatbox-description">
+                Know more about your flightmate!
             </div>
         </div>
-    </footer>
-
- 
+        <div class="col s2 no-padding">
+            <button id="chatbox-toggle" class="btn waves-effect waves-light transparent chatbox-button" ng-click="toggleChatBox()">
+                <i class="medium material-icons">chat</i>
+            </button>
+        </div>
+    </div>
+</footer>
