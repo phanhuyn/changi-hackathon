@@ -1,6 +1,7 @@
 (function() {
-    angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams',
-        function ($scope, Flight, ChatService, ChatBox, $stateParams){
+    angular.module('changi').controller('MainController',
+        ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', '$timeout',
+        function ($scope, Flight, ChatService, ChatBox, $stateParams, $timeout){
         $scope.flightNumber = $stateParams.flight;
         $scope.step = 0;
         Flight.query({flight_number: $scope.flightNumber}, function(flight){
@@ -17,6 +18,12 @@
         $scope.markDone = function(step){
             $scope.step = step;
             console.log(step);
+        }
+        poll();
+
+        function poll() {
+            console.log("Tick");
+            $timeout(poll, 2000);
         }
     }]);
     angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', '$timeout',
