@@ -1,24 +1,31 @@
 (function() {
     angular.module('changi').controller('MainController', 
-        ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout', '$state',
-        function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout, $state){
-        $scope.flight = FlightService.getFlight();
-        if($scope.flight == null){
-            $state.go('home');
-        }
-        $scope.hide = true;
-        $scope.toggleChatBox = function() {
-            $scope.hide = !$scope.hide;
-        }
-        $scope.markDone = function(step){
-            $scope.step = step;
-            console.log(step);
-        }
-        // poll();
-        function poll() {
-            console.log("Tick");
-            $timeout(poll, 2000);
-        }
+        ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout',
+        function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout){
+            $scope.flight = FlightService.getFlight();
+            $scope.hide = true;
+
+            $scope.toggleChatBox = function() {
+                $scope.hide = !$scope.hide;
+            }
+
+            $scope.markDone = function(step){
+                $scope.step = step;
+                console.log(step);
+            }
+
+            poll();
+
+            function poll() {
+                console.log("Tick");
+                FlightService.updateFlight();
+                $scope.flight = FlightService.getFlight();
+                console.log($scope.flight);
+                if ($scope.flight.delay != null) {
+                    console.log("DELAYYYYYYYYYYYY");
+                }
+                $timeout(poll, 2000);
+            }
     }]);
     angular.module('changi').controller('ChatBoxController', 
         ['$scope', 'FlightService', 'ChatBox', 'Comment', 'User', '$timeout', 'Utils',
