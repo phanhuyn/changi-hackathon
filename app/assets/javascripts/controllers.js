@@ -9,11 +9,12 @@
                 ChatService.setFlightId($scope.flight.id);
         });
         $scope.hide = true;
+
         $scope.toggleChatBox = function() {
             $scope.hide = !$scope.hide;
         }
 
-        $scope.markDone(step) = function(){
+        $scope.markDone = function(step){
             $scope.step = step;
         }
     }]);
