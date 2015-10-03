@@ -2,34 +2,8 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 <!-- Navigation Bar -->
-<header class="fixed-header">
-    <nav>
-        <div class="nav-wrapper container">
-            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-            <ul class="right hide-on-med-and-down">
-                <li><a href="index.html">Sign Out</a></li>
-                <li><a href="#.html">About Us</a></li>
-                <li><a href="main.html">Refresh</a></li>
-            </ul>
-            <ul class="right hide-on-large-only">
-                <li>
-                    <a href="main.html" class="button-collapse _alt">
-                        <i class="material-icons">repeat</i>
-                    </a>
-                </li>
-            </ul>
-            <ul class="side-nav" id="mobile-demo">
-                <li><a href="index.html">Sign Out</a></li>
-                <li><a href="#.html">About Us</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
-<!-- Main Body -->
-<main>
-    <!-- Timeline Pages -->
-    <section class="timeline-section">
-        <!-- flight banner -->
+<header id="header">
+            <!-- flight banner -->
         <div class="index-banner flight-banner">
             <h3 class="text-bold shadow">{{flight.airlineCode}}{{flight.number}}</h3>
             <h4 class="text-bold shadow">
@@ -42,6 +16,13 @@
             </div>
         </div>
         <!-- end flight banner -->
+
+</header>
+<!-- Main Body -->
+<main id="main-content">
+    <!-- Timeline Pages -->
+    <section class="timeline-section">
+
         <!-- Travel Timeline -->
         <div class="departure-timeline">
             <form id="msform">
@@ -55,7 +36,9 @@
                 <!-- fieldsets -->
                 <fieldset>
                     <input type="button" name="next" class="next action-button btn" value="Next" />
+            
                     <div ng-include="'stage1.html'"></div>
+
                 </fieldset>
 
                 <fieldset>
@@ -88,7 +71,8 @@
                     <i class="small material-icons">chat</i>
                 </div>
             </header> -->
-        <ol class="discussion">
+            <div class="row no-margin discussion-wrapper">
+                <ol class="discussion">
             <li ng-repeat='comment in comments' ng-class="comment.user.id==user.id?'self':'other'">
                 <div class="avatar">
                     <img src="/assets/avatar.png" />
@@ -99,7 +83,8 @@
                 </div>
             </li>
         </ol>
-        <div class="row message-input" ng-hide='user'>
+            </div>     
+<div class="row no-margin name-input" ng-hide='user'>
             <div class='message-text'>
                 <div class="input-field col s12">
                     <input type="text" ng-model='username'>
@@ -110,7 +95,8 @@
                 <i class="material-icons right">send</i>
             </button>
         </div>
-        <div class="row message-input">
+
+        <div class="row no-margin message-input">
             <div class="message-text">
                 <div class="input-field col s12">
                     <input id="" type="text" class="" ng-model='newComment'>
@@ -124,7 +110,7 @@
     </section>
 </main>
 <!-- Chatbox Footer -->
-<footer class="page-footer fixed-footer">
+<footer id="#footer" class="page-footer fixed-footer">
     <div class="row no-margin">
         <div class="col s10">
             <div class="chatbox-description">
