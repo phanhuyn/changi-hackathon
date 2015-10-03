@@ -8,7 +8,7 @@
               controller: 'WelcomeController'
             })
             .state('main', {
-              url: '/main',
+              url: '/main/:flightNumber',
               templateUrl: 'main.html',
               controller: 'MainController'
             })
@@ -16,7 +16,8 @@
               url: '/test',
               templateUrl: 'test.html',
               controller: 'MainController'
-            });
+            })
+            .state();
             $urlRouterProvider.otherwise('home');
         }]);
 })();

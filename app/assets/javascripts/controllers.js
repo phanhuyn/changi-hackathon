@@ -1,6 +1,8 @@
 (function() {
-    angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', 
-        function ($scope, Flight, ChatService, ChatBox){
+    angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams'
+        function ($scope, Flight, ChatService, ChatBox, $stateParams){
+        $scope.test = $stateParams.flightNumber;
+        console.log($scope.test);
         $scope.inputFlight = function(){
             Flight.query({flight_number: $scope.flightNumber}, function(flight){
                 $scope.flight = flight[0];
