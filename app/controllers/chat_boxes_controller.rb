@@ -4,7 +4,13 @@ class ChatBoxesController < ApplicationController
   # GET /chat_boxes
   # GET /chat_boxes.json
   def index
-    @chat_boxes = ChatBox.all
+    Rails.logger.info params
+    if params.has_key?("flight_id")
+        flight_id = params['flight_id']
+        @chat_boxes = [Flight.find(flight_id).chat_box]
+    else
+        @chat_boxes = ChatBox.all
+    end
   end
 
   # GET /chat_boxes/1

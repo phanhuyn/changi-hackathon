@@ -5,7 +5,7 @@
             .state('home', {
               url: '/home',
               templateUrl: 'home.html',
-              controller: 'MainCtrl'
+              controller: 'HomeController'
             });
             $urlRouterProvider.otherwise('home');
         }]);
