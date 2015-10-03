@@ -114,24 +114,9 @@
                 </div>
             </div>
 
-
-            <div class="row">
-                <div ng-controller="ChatBoxController">
-                <div ng-repeat="comment in comments">
-		            <p>{{comment.content}}</p>
-	            </div>Comment: <input type='text' name='commentBox' ng-model='newComment'>
-				<button type='submit' ng-click='addComment()'> Post
-				</button>
-				</br>	
-				<div ng-hide='user'>
-					Name: <input type="text" name='username' ng-model='username'>
-					<button type='submit' ng-click='addUser()'>Add user</button>
-	            </div>
-            </div>
-
         </div>
         </div>
-        <section class="chatbox" id="chatbox" ng-hide="hide">
+        <section class="chatbox" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
             <!-- <header class="top-bar">
                 <div class="left">
                     <h1>FlightTalk</h1>
@@ -141,81 +126,37 @@
                 </div>
             </header> -->
             <ol class="discussion">
-                <li class="other">
+                <li ng-repeat='comment in comments' ng-class="comment.user.id==user.id?'self':'other'">
                     <div class="avatar">
                         <img src="/assets/avatar.png" />
                     </div>
                     <div class="messages">
-                        <p>yeah, they do early flights cause they connect with big airports. they wanna get u to your connection</p>
-                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
-                    </div>
-                </li>
-                <li class="self">
-                    <div class="avatar">
-                        <img src="/assets/avatar.png" />
-                    </div>
-                    <div class="messages">
-                        <p>That makes sense.</p>
-                        <p>It's a pretty small airport.</p>
-                        <time datetime="2009-11-13T20:14">37 mins</time>
-                    </div>
-                </li>
-                <li class="other">
-                    <div class="avatar">
-                        <img src="/assets/avatar.png" />
-                    </div>
-                    <div class="messages">
-                        <p>that mongodb thing looks good, huh?</p>
-                        <p>tiny master db, and huge document store</p>
-                    </div>
-                </li>
-                <li class="self">
-                    <div class="avatar">
-                        <img src="/assets/avatar.png" />
-                    </div>
-                    <div class="messages">
-                        <p>That makes sense.</p>
-                        <p>It's a pretty small airport.</p>
-                        <time datetime="2009-11-13T20:14">37 mins</time>
-                    </div>
-                </li>
-                <li class="other">
-                    <div class="avatar">
-                        <img src="/assets/avatar.png" />
-                    </div>
-                    <div class="messages">
-                        <p>that mongodb thing looks good, huh?</p>
-                        <p>tiny master db, and huge document store</p>
-                    </div>
-                </li>
-                <li class="self">
-                    <div class="avatar">
-                        <img src="/assets/avatar.png" />
-                    </div>
-                    <div class="messages">
-                        <p>That makes sense.</p>
-                        <p>It's a pretty small airport.</p>
-                        <time datetime="2009-11-13T20:14">37 mins</time>
-                    </div>
-                </li>
-                <li class="other">
-                    <div class="avatar">
-                        <img src="/assets/avatar.png" />
-                    </div>
-                    <div class="messages">
-                        <p>that mongodb thing looks good, huh?</p>
-                        <p>tiny master db, and huge document store</p>
+                        <p>{{comment.content}}</p>
+                        <time datetime="2009-11-13T20:00">{{comment.user.name}} • 51 min</time>
                     </div>
                 </li>
             </ol>
+            <div class="row message-input" ng-hide='user'>
+                <div class='message-text'>
+                    <div class="input-field col s12">
+                        <input type="text" ng-model='username'>
+                        <label for="">Your Name</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light message-send" type="submit" name="action" 
+                        ng-click='addUser()'>OK
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
             <div class="row message-input">
                 <div class="message-text">
                     <div class="input-field col s12">
-                        <input id="" type="text" class="">
+                        <input id="" type="text" class="" ng-model='newComment'>
                         <label for="">Your Message</label>
                     </div>
                 </div>
-                <button class="btn waves-effect waves-light message-send" type="submit" name="action">SEND
+                <button class="btn waves-effect waves-light message-send" type="submit" name="action" 
+                        ng-click='addComment()'>SEND
                     <i class="material-icons right">send</i>
                 </button>
             </div>
