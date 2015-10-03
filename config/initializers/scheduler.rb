@@ -24,7 +24,7 @@ s.every '30s' do
                 :terminal => record['terminal'],
                 :adi => 'a',
                 :gate => rand(10),
-                :delay => 1.hour
+                :delay => nil
             })
             new_flight.save()
         end
