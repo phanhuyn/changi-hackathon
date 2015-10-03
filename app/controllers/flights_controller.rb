@@ -17,14 +17,7 @@ class FlightsController < ApplicationController
 
   # GET /flights/1 GET /flights/1.json
   def show
-    if @flight.chat_box.nil?
-        @chat_box = @flight.build_chat_box({
-            :open_time => @flight.scheduled - 1.hour,
-            :close_time => @flight.scheduled
-        })
-    end
-    Rails.logger.info "Hereeeeeeeeeee"
-    Rails.logger.info @chat_box if @chat_box
+    @chat_box = create_chatbox(@flight)
     render json: @flight.to_json(:include => {:chat_box => {:include => :comments}})
   end
 
@@ -86,5 +79,15 @@ class FlightsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def flight_params
       params.require(:flight).permit(:number, :scheduled, :airlineCode)
+    end
+
+    def create_chatbox(flight)
+        if flight.chat_box.nil?
+            chat_box = flight.build_chat_box({
+                :open_time => flight.scheduled - 1.hour,
+                :close_time => flight.scheduled
+            })
+        end
+        return chat_box
     end
 end
