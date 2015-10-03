@@ -67,40 +67,37 @@
                         <br>lskfjslfjslkfjsk lskfjsjdksflkjal
                         <br>lskfjslfjslkfjsk
                     </div>
-                    <div class="grid">
-                        <figure class="effect-steve">
-                            <img src="/assets/check-in1.jpg" alt="img29" />
-                            <figcaption>
-                                <h2>Lonely <span>Steve</span></h2>
-                                <p>Steve was afraid of the Boogieman.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-steve">
-                            <img src="/assets/check-in1.jpg" alt="img33" />
-                            <figcaption>
-                                <h2>Lonely <span>Steve</span></h2>
-                                <p>Steve was afraid of the Boogieman.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-steve">
-                            <img src="/assets/check-in1.jpg" alt="img33" />
-                            <figcaption>
-                                <h2>Lonely <span>Steve</span></h2>
-                                <p>Steve was afraid of the Boogieman.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
-                        <figure class="effect-steve">
-                            <img src="/assets/check-in1.jpg" alt="img33" />
-                            <figcaption>
-                                <h2>Lonely <span>Steve</span></h2>
-                                <p>Steve was afraid of the Boogieman.</p>
-                                <a href="#">View more</a>
-                            </figcaption>
-                        </figure>
+                    <div class="row">
+                        lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk
                     </div>
+                    <div class="row">
+                        lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk
+                    </div>
+                    <div class="row">
+                        lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk lskfjsjdksflkjal
+                        <br>lskfjslfjslkfjsk
+                    </div>
+                    
                     <!-- attraction thumbnails -->
                     <!-- <div ng-include="'stage1.html'"></div> -->
                 </fieldset>
@@ -132,7 +129,8 @@
                     <i class="small material-icons">chat</i>
                 </div>
             </header> -->
-        <ol class="discussion">
+            <div class="row no-margin discussion-wrapper">
+                <ol class="discussion">
             <li ng-repeat='comment in comments' ng-class="comment.user.id==user.id?'self':'other'">
                 <div class="avatar">
                     <img src="/assets/avatar.png" />
@@ -143,7 +141,8 @@
                 </div>
             </li>
         </ol>
-        <div class="row message-input" ng-hide='user'>
+            </div>     
+<div class="row no-margin name-input" ng-hide='user'>
             <div class='message-text'>
                 <div class="input-field col s12">
                     <input type="text" ng-model='username'>
@@ -154,7 +153,8 @@
                 <i class="material-icons right">send</i>
             </button>
         </div>
-        <div class="row message-input">
+
+        <div class="row no-margin message-input">
             <div class="message-text">
                 <div class="input-field col s12">
                     <input id="" type="text" class="" ng-model='newComment'>
