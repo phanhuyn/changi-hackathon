@@ -1,6 +1,6 @@
 <div>
-	<form action='/input' action='POST'>
-		Enter your flight number: <input type='text' name='flight_number'>
-		<button type='submit'> Submit
+	<form>
+		Enter your flight number: <input type='text' name='flight_number' ng-model='flightNumber'>
+		<button type='submit' ng-click="inputFlight()"> Submit
 	</form>
 </div>

@@ -1,5 +1,5 @@
 (function(){
-    angular.module('changi', ['ui.router', 'templates']).config(['$stateProvider','$urlRouterProvider',
+    angular.module('changi', ['ui.router', 'templates', 'ngResource']).config(['$stateProvider','$urlRouterProvider',
         function($stateProvider, $urlRouterProvider){
             $stateProvider
             .state('home', {
