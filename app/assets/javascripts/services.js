@@ -4,7 +4,7 @@
     });
     angular.module('changi').factory('ChatBox', function($resource){
         return $resource('/chat_boxes.json');
-    })
+    });
     angular.module('changi').factory('ChatService', function(){
         var flight_id = null;
         return {
@@ -30,5 +30,16 @@
                     }
                 }
             });
-    })
+    });
+    angular.module('changi').factory('FlightService', function () {
+        var flight = null;
+        return{
+            getFlight: function() {
+                return flight;
+            },
+            setFlight: function(f) {
+                flight = f;
+            }
+        }
+    });
 })();

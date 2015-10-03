@@ -8,7 +8,7 @@
               controller: 'WelcomeController'
             })
             .state('main', {
-                url: '/main/:flight',
+                url: '/main',
                 templateUrl: 'main.html',
                 controller: 'MainController'
             })

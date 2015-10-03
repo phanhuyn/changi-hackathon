@@ -18,12 +18,12 @@
         <h2 class="text-bold shadow">Changi</h2>
         <form action="" class="homepage-form center-align">
             <div class="input-field">
-                <input placeholder="" type="text" class="homepage-input" name='flight_number' ng-model='flightNumber'>
+                <input placeholder="{{flightNumber}}" type="text" class="homepage-input" name='flight_number' ng-model='flightNumber'>
                 <label for=""></label>
             </div>
             <!-- <button class="btn waves-effect waves-light full-width" type="submit" name="action">Lets go!
                 </button> -->
-            <a class="waves-effect waves-light btn full-width" ui-sref='main({flight:flightNumber})'>Lets go!</a>
+            <a class="waves-effect waves-light btn full-width" ng-click="findFlight()">Lets go!</a>
         </form>
     </div>
 </div>

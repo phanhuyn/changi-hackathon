@@ -1,28 +1,20 @@
 (function() {
-    angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams',
-        function ($scope, Flight, ChatService, ChatBox, $stateParams){
-        $scope.flightNumber = $stateParams.flight;
-        Flight.query({flight_number: $scope.flightNumber}, function(flight){
-                $scope.flight = flight[0];
-                console.log($scope.flight);
-                ChatService.setFlightId($scope.flight.id);
-        });
+    angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService',
+        function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService){
+        $scope.flight = FlightService.getFlight();
         $scope.hide = true;
         $scope.toggleChatBox = function() { $scope.hide = !$scope.hide;
         }
     }]);
-    angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', '$timeout',
-        function($scope, ChatService, ChatBox, Comment, User, $timeout){
+    angular.module('changi').controller('ChatBoxController', ['$scope', 'FlightService', 'ChatBox', 'Comment', 'User', '$timeout',
+        function($scope, FlightService, ChatBox, Comment, User, $timeout){
             $scope.user = null;
-            $scope.$watch(function(){return ChatService.getFlightId();}, function(flight_id){
-                if(flight_id){
-                    ChatBox.query({flight_id: ChatService.getFlightId()}, function(chatbox){
-                        $scope.chatbox = chatbox[0];
-                        $scope.comments = $scope.chatbox.comments;
-                        poll();
-                    });
-                }
-            }, true);
+            console.log(FlightService.getFlight());
+            ChatBox.query({flight_id: FlightService.getFlight().id}, function(chatbox){
+                $scope.chatbox = chatbox[0];
+                $scope.comments = $scope.chatbox.comments;
+                poll();
+            });
             $scope.addComment = function() {
                 Comment.save({user_id: $scope.user.id, content: $scope.newComment, chat_box_id: $scope.chatbox.id}, function(res){
                     console.log("Comment added");
@@ -45,7 +37,17 @@
                 });
             };
     }]);
-    angular.module('changi').controller('WelcomeController', ['$scope', function($scope){
-        $scope.flightNumber = "123";
+    angular.module('changi').controller('WelcomeController', ['$scope', 'FlightService', 'Flight', '$state', 
+        function($scope, FlightService, Flight, $state){
+        $scope.flightNumber = "QZ375";
+        $scope.findFlight = function() {
+            Flight.query({flight_number: $scope.flightNumber}, function(flight){
+                console.log(flight[0]);
+                FlightService.setFlight(flight[0]);
+                $state.go('main');
+            }, function(){
+                alert("No Flight found, try again!");
+            });
+        }
     }]);
 })();
