@@ -1,3 +1,4 @@
+*scheduler.rb
 *.rbc
 capybara-*.html
 .rspec
