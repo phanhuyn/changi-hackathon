@@ -5,8 +5,8 @@
             <div class="card ">
                 <div class="card-content black-text">
                     <span class="card-title black-text">Check in</span>
-                    <p>Before 3:30 pm</p>
-                    <p>Terminal 3 Counter 4</p>
+                    <p>Before {{flight.scheduled | date : 'hh : mm'}}</p>
+                    <p>Terminal {{flight.terminal}}</p>
                 </div>
                 <div class="card-action">
                     <a href="#">Find out more</a>

@@ -4,6 +4,7 @@
         function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout){
             $scope.flight = FlightService.getFlight();
             $scope.hide = true;
+            $scope.test = 124;
 
             $scope.toggleChatBox = function() {
                 $scope.hide = !$scope.hide;
