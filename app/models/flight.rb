@@ -1,4 +1,4 @@
 class Flight < ActiveRecord::Base
     has_one :chat_box
-    has_one :gate
+    belongs_to :gate
 end

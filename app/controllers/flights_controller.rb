@@ -6,7 +6,7 @@ class FlightsController < ApplicationController
   # GET /flights.json
   def index
     Rails.logger.info params
-    if params.has_key?("flight_number")
+    if params.has_key?('flight_number')
         flight = params['flight_number']
         @flights = Flight.find_by_sql("SELECT * FROM flights
                         WHERE (flights.airlineCode)||(flights.number) = '#{flight}'")
