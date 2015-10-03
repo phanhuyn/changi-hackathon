@@ -23,14 +23,8 @@
             </div>
             <!-- <button class="btn waves-effect waves-light full-width" type="submit" name="action">Lets go!
                 </button> -->
-            <a class="waves-effect waves-light btn full-width" ui-sref='main({flight:123})'>Lets go!</a>
+            <a class="waves-effect waves-light btn full-width" ui-sref='main({flight:flightNumber})'>Lets go!</a>
         </form>
-
-        <div ng-controller="ChatBoxController">
-		<div ng-repeat="comment in comments">
-			<p>{{comment.content}}</p>
-		</div>
-	</div>
     </div>
 </div>
 
