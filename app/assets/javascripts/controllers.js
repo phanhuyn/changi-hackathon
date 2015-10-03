@@ -17,10 +17,23 @@
             $timeout(poll, 2000);
         }
     }]);
-    angular.module('changi').controller('ChatBoxController', ['$scope', 'FlightService', 'ChatBox', 'Comment', 'User', '$timeout',
-        function($scope, FlightService, ChatBox, Comment, User, $timeout){
+    angular.module('changi').controller('ChatBoxController', 
+        ['$scope', 'FlightService', 'ChatBox', 'Comment', 'User', '$timeout', 'Utils',
+        function($scope, FlightService, ChatBox, Comment, User, $timeout, Utils){
             $scope.user = null;
-            console.log(FlightService.getFlight());
+            var cookies = Utils.getCookies();
+            console.log(cookies.user_id);
+            console.log(cookies.flight_number);
+            console.log(cookies);
+            if(cookies.user_id !== undefined){
+                User.get({id: cookies.user_id}, function(user) {
+                    $scope.user = user;
+                    console.log("USER ALR logged in!");
+                    console.log(user);
+                }, function(err){
+                    console.log(err);
+                });
+            }
             ChatBox.query({flight_id: FlightService.getFlight().id}, function(chatbox){
                 $scope.chatbox = chatbox[0];
                 $scope.comments = $scope.chatbox.comments;
@@ -48,17 +61,32 @@
                 });
             };
     }]);
-    angular.module('changi').controller('WelcomeController', ['$scope', 'FlightService', 'Flight', '$state', 
-        function($scope, FlightService, Flight, $state){
-        $scope.flightNumber = "QZ375";
-        $scope.findFlight = function() {
-            Flight.query({flight_number: $scope.flightNumber}, function(flight){
-                console.log(flight[0]);
-                FlightService.setFlight(flight[0]);
-                $state.go('main');
-            }, function(){
-                alert("No Flight found, try again!");
-            });
-        }
+    angular.module('changi').controller('WelcomeController', ['$scope', 'FlightService', 'Flight', '$state', 'Utils',
+        function($scope, FlightService, Flight, $state, Utils){
+            var cookies = Utils.getCookies();
+            console.log(cookies);
+            if(cookies.flight_number !== undefined){
+                console.log("cookies got flight number");
+                Flight.query({flight_number: cookies.flight_number}, function(flight){
+                    console.log(flight[0]);
+                    FlightService.setFlight(flight[0]);
+                    console.log("FLIGHT ALR SET");
+                    $state.go('main');
+                }, function(){
+                    console.log("FLIGHT number on cookies is not valid");
+                });
+            }
+            $scope.flightNumber = "QZ375";
+            $scope.findFlight = function() {
+                Flight.query({flight_number: $scope.flightNumber}, function(flight){
+                    console.log(flight[0]);
+                    FlightService.setFlight(flight[0]);
+                    $state.go('main');
+                }, function(){
+                    alert("No Flight found, try again!");
+                });
+            }
+            
+            
     }]);
 })();

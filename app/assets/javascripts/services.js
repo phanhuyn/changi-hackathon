@@ -20,7 +20,7 @@
         return $resource('/comments.json');
     });
     angular.module('changi').factory('User', function($resource){
-        return $resource('/users.json/:id', {id: '@id'},
+        return $resource('/users/:id', {id: '@id'},
             {
                 post: {
                     method: "POST",
@@ -39,6 +39,31 @@
             },
             setFlight: function(f) {
                 flight = f;
+            }
+        }
+    });
+    angular.module('changi').factory('Utils', function() {
+        return {
+            getCookies: getCookies,
+            deleteCookies: deleteCookies
+        };
+        function getCookies(){
+            console.log(document.cookie);
+            var cookies = {};
+            var splitCookies = document.cookie.split(';');
+            for(var i=0;i<splitCookies.length;i++){
+                var temp = splitCookies[i].trim().split('=');
+                cookies[temp[0]] = temp[1];
+            }
+            return cookies;
+        }
+        function deleteCookies() {
+            var cookies = document.cookie.split(";");
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                var eqPos = cookie.indexOf("=");
+                var name = eqPos > -1 ? cookie.substr(0, eqPos) : cookie;
+                document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
             }
         }
     });

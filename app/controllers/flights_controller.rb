@@ -10,9 +10,9 @@ class FlightsController < ApplicationController
         flight = params['flight_number']
         @flights = Flight.find_by_sql("SELECT * FROM flights
                         WHERE (flights.airlineCode)||(flights.number) = '#{flight}'")
-        cookies[:flight_id] = @flights[0].id
+        cookies[:flight_number] =@flights[0].airlineCode + @flights[0].number
         Rails.logger.info "In index"
-        Rails.logger.info cookies[:flight_id]
+        Rails.logger.info cookies[:flight_number]
 
     else
         @flights = Flight.all
