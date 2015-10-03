@@ -1,5 +1,6 @@
 (function() {
-    angular.module('changi').controller('HomeController', ['$scope', 'Flight', 'ChatService', 'ChatBox', function ($scope, Flight, ChatService, ChatBox){
+    angular.module('changi').controller('HomeController', ['$scope', 'Flight', 'ChatService', 'ChatBox', 
+        function ($scope, Flight, ChatService, ChatBox){
         $scope.inputFlight = function(){
             Flight.query({flight_number: $scope.flightNumber}, function(flight){
                 $scope.flight = flight[0];
@@ -25,16 +26,20 @@
                 $scope.comments.push(res.toJSON());
             })
         }
-        if(!$scope.user){
-            //call this block if user not exist
-            // $scope.user = {name: 'David', id: 1}
-        }
         $scope.addUser = function(){
             User.save({name: $scope.username}, function(res){
                 $scope.user = res;
                 console.log("User added");
             });
         }
+        // while(true){
+        //     setTimeout(function () {
+        //         console.log("A");
+        //         $scope.$apply(function(){
+                    
+        //         });
+        //     }, 1000);
+        // }
     }]);
     angular.module('changi').controller('MainController', ['$scope', function($scope){
         
