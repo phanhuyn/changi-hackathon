@@ -126,7 +126,7 @@
                 </div>
             </header> -->
             <ol class="discussion">
-                <li class="other" ng-repeat='comment in comments'>
+                <li ng-repeat='comment in comments' ng-class="comment.user.id==user.id?'self':'other'">
                     <div class="avatar">
                         <img src="/assets/avatar.png" />
                     </div>
