@@ -5,11 +5,12 @@ class ChatBoxesController < ApplicationController
   # GET /chat_boxes.json
   def index
     Rails.logger.info params
-    if params.has_key?("flight_id")
+    if params.has_key?('flight_id')
         flight_id = params['flight_id']
-        @chat_boxes = [Flight.find(flight_id).chat_box]
+        @chat_boxes = ChatBox.where(flight_id: flight_id)
+        puts @chat_boxes
     else
-        render :nothing => true, :status => 400
+        @chat_boxes = ChatBox.all
     end
   end
 
