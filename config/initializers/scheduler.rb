@@ -3,7 +3,7 @@ require 'HTTParty'
 
 s = Rufus::Scheduler.singleton
 
-s.every '10m' do
+s.every '500m' do
     url = 'https://flifo-qa.api.aero/flifo/v3/flights/sin/d'
     headers = {'X-apiKey' => '2cfd0827f82ceaccae7882938b4b1627', 'Accept' => 'application/json'}
     response = HTTParty.get(url, headers: headers) 
