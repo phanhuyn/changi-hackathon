@@ -2,5 +2,11 @@
 	<form>
 		Enter your flight number: <input type='text' name='flight_number' ng-model='flightNumber'>
 		<button type='submit' ng-click="inputFlight()"> Submit
+		</button>
 	</form>
+	<div ng-controller="ChatBoxController">
+		<div ng-repeat="comment in comments">
+			<p>{{comment}}</p>
+		</div>
+	</div>
 </div>
