@@ -7,6 +7,11 @@
               templateUrl: 'home.html',
               controller: 'HomeController'
             })
+            .state('main', {
+              url: '/main',
+              templateUrl: 'main.html',
+              controller: 'MainController'
+            })
             .state('test', {
               url: '/test',
               templateUrl: 'test.html',

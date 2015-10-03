@@ -36,7 +36,7 @@
             });
         }
     }]);
-    angular.module('changi').controller('ChatBoxController', ['$scope', function($scope){
+    angular.module('changi').controller('MainController', ['$scope', function($scope){
         
     }]);
 })();
