@@ -4,7 +4,12 @@ class CommentsController < ApplicationController
   # GET /comments
   # GET /comments.json
   def index
-    @comments = Comment.all
+    if params.has_key?('chat_box_id')
+      chat_box_id = params['chat_box_id']
+      @comments = ChatBox.find(chat_box_id).comments
+    else
+      render :nothing => true, :status => 400
+    end
   end
 
   # GET /comments/1

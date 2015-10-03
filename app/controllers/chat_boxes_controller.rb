@@ -9,7 +9,7 @@ class ChatBoxesController < ApplicationController
         flight_id = params['flight_id']
         @chat_boxes = [Flight.find(flight_id).chat_box]
     else
-        @chat_boxes = ChatBox.all
+        render :nothing => true, :status => 400
     end
   end
 
