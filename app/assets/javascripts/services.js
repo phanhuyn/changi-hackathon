@@ -1,9 +1,9 @@
 (function() {
     angular.module('changi').factory('Flight', function($resource){
-        return $resource('/flights/:id');
+        return $resource('/flights.json');
     });
     angular.module('changi').factory('ChatBox', function($resource){
-        return $resource('/chat_boxes/:id');
+        return $resource('/chat_boxes.json');
     });
     angular.module('changi').factory('ChatService', function(){
         var flight_id = null;
@@ -17,7 +17,7 @@
         }
     });
     angular.module('changi').factory('Comment', function($resource) {
-        return $resource('/comments/:id');
+        return $resource('/comments.json');
     });
     angular.module('changi').factory('User', function($resource){
         return $resource('/users/:id', {id: '@id'},
@@ -31,24 +31,17 @@
                 }
             });
     });
-    angular.module('changi').factory('FlightService', ['Flight',
-            function (Flight) {
+    angular.module('changi').factory('FlightService', function () {
         var flight = null;
-        return {
+        return{
             getFlight: function() {
                 return flight;
             },
             setFlight: function(f) {
                 flight = f;
-            },
-            updateFlight: function() {
-                if (flight)
-                    Flight.get({id: flight.id}, function(response) {
-                        flight = response;
-                    });
             }
         }
-    }]);
+    });
     angular.module('changi').factory('Utils', function() {
         return {
             getCookies: getCookies,

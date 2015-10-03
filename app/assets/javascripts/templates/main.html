@@ -2,8 +2,8 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
 <!-- Navigation Bar -->
-<header id="header">
-    <!-- <nav>
+<header class="fixed-header">
+    <nav>
         <div class="nav-wrapper container">
             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
@@ -23,8 +23,13 @@
                 <li><a href="#.html">About Us</a></li>
             </ul>
         </div>
-    </nav> -->
-            <!-- flight banner -->
+    </nav>
+</header>
+<!-- Main Body -->
+<main>
+    <!-- Timeline Pages -->
+    <section class="timeline-section">
+        <!-- flight banner -->
         <div class="index-banner flight-banner">
             <h3 class="text-bold shadow">{{flight.airlineCode}}{{flight.number}}</h3>
             <h4 class="text-bold shadow">
@@ -33,16 +38,10 @@
                 {{flight.city}}
             </h4>
             <div>
-                Time: {{flight.scheduled | date : 'hh.mma'}} | Gate: {{flight.gate.id}}
+                Time: {{flight.scheduled | date : 'hh:mm a'}} | Gate: {{flight.gate.id}}
             </div>
         </div>
         <!-- end flight banner -->
-
-</header>
-<!-- Main Body -->
-<main id="main-content">
-    <!-- Timeline Pages -->
-    <section class="timeline-section">
         <!-- Travel Timeline -->
         <div class="departure-timeline">
             <form id="msform">
@@ -56,6 +55,7 @@
                 <!-- fieldsets -->
                 <fieldset>
                     <input type="button" name="next" class="next action-button btn" value="Next" />
+<<<<<<< HEAD
                     <!-- attraction thumbnails -->
                     <div class="row">
                         lskfjsjdksflkjal
@@ -100,26 +100,32 @@
                     
                     <!-- attraction thumbnails -->
                     <!-- <div ng-include="'stage1.html'"></div> -->
+=======
+                    <div ng-include="'stage1.html'"></div>
+>>>>>>> c60a42df1ac52b64ee99fb09680a5a52d5b8ecf8
                 </fieldset>
+
                 <fieldset>
                     <input type="button" name="previous" class="previous action-button btn" value="Previous" />
-                    <input type="button" name="next" class="next action-button btn" value="Next" />
+                        <input type="button" name="next" class="next action-button btn" value="Next" />
                     <div ng-include="'stage2.html'"></div>
                 </fieldset>
+
                 <fieldset>
                     <input type="button" name="previous" class="previous action-button btn" value="Previous" />
-                    <input type="button" name="next" class="next action-button btn" value="Next" />
+                        <input type="button" name="next" class="next action-button btn" value="Next" />
                     <div ng-include="'stage3.html'"></div>
                 </fieldset>
+
                 <fieldset>
-                    <input type="button" name="previous" class="previous action-button btn" value="Previous" />
+                <input type="button" name="previous" class="previous action-button btn" value="Previous" />
                     <div ng-include="'stage4.html'"></div>
                 </fieldset>
             </form>
         </div>
         <!-- end Travel Timeline -->
     </section>
-
+    
     <section class="chatbox-section" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
         <!-- <header class="top-bar">
                 <div class="left">
@@ -168,7 +174,7 @@
     </section>
 </main>
 <!-- Chatbox Footer -->
-<footer id="#footer" class="page-footer fixed-footer">
+<footer class="page-footer fixed-footer">
     <div class="row no-margin">
         <div class="col s10">
             <div class="chatbox-description">
