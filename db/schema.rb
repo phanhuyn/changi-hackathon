@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003082447) do
+ActiveRecord::Schema.define(version: 20151003091059) do
 
   create_table "chat_boxes", force: :cascade do |t|
     t.datetime "open_time"
@@ -47,7 +47,10 @@ ActiveRecord::Schema.define(version: 20151003082447) do
     t.string   "adi"
     t.string   "airlineCode"
     t.datetime "delay"
+    t.integer  "gate_id"
   end
+
+  add_index "flights", ["gate_id"], name: "index_flights_on_gate_id"
 
   create_table "gates", force: :cascade do |t|
     t.string   "name"

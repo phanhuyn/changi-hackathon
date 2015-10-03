@@ -3,7 +3,7 @@ require 'httparty'
 
 s = Rufus::Scheduler.singleton
 
-s.every '500m' do
+s.every '30s' do
     url = 'https://flifo-qa.api.aero/flifo/v3/flights/sin/d'
     headers = {'X-apiKey' => '2cfd0827f82ceaccae7882938b4b1627', 'Accept' => 'application/json'}
     response = HTTParty.get(url, headers: headers) 
@@ -23,9 +23,9 @@ s.every '500m' do
                 :airportCode => record['airportCode'],
                 :terminal => record['terminal'],
                 :adi => 'a',
-                :gate => rand(10),
                 :delay => nil
             })
+            new_flight.gate = Gate.find(rand(10))
             new_flight.save()
         end
     end
