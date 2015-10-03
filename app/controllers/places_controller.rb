@@ -5,6 +5,13 @@ class PlacesController < ApplicationController
   # GET /places.json
   def index
     @places = Place.all
+    if params.has_key?('long') and params.has_key?('lat')
+        long = params['long'].to_f
+        lat = params['lat'].to_f
+        @places = @places.sort_by do |place|
+            (long - place.longitude)**2 + (lat - place.latitude)**2
+        end
+    end
   end
 
   # GET /places/1
