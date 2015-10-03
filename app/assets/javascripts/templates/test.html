@@ -1,0 +1,21 @@
+<div>
+    <form>
+        Enter your flight number: <input type='text' name='flight_number' ng-model='flightNumber'>
+        <button type='submit' ng-click="inputFlight()"> Submit
+        </button>
+    </form>
+    <div ng-controller="ChatBoxController">
+        <div ng-repeat="comment in comments">
+            <p>{{comment.content}}</p>
+        </div>
+        Comment: <input type='text' name='commentBox' ng-model='newComment'>
+        <button type='submit' ng-click='addComment()'> Post
+        </button>
+        </br>   
+        <div ng-hide='user'>
+            Name: <input type="text" name='username' ng-model='username'>
+            <button type='submit' ng-click='addUser()'>Add user</button>
+        </div>
+    </div>
+</div>
+

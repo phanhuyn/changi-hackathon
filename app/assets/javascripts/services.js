@@ -16,4 +16,19 @@
             }
         }
     });
+    angular.module('changi').factory('Comment', function($resource) {
+        return $resource('/comments.json');
+    });
+    angular.module('changi').factory('User', function($resource){
+        return $resource('/users.json/:id', {id: '@id'},
+            {
+                post: {
+                    method: "POST",
+                    isArray: false,
+                    headers: {
+                        'Accept':'application/json'
+                    }
+                }
+            });
+    })
 })();
