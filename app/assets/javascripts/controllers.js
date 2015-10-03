@@ -6,6 +6,12 @@
         if($scope.flight == null){
             $state.go('home');
         }
+        console.log($scope.flight.scheduled);
+        var scheduled = $scope.flight.scheduled;
+        var date = new Date(scheduled);
+        var checkinTime = new Date(scheduled);
+        checkinTime.setHours(date.getHours()-2);
+        $scope.checkinTime = checkinTime;
         $scope.hide = true;
         $scope.toggleChatBox = function() {
             $scope.hide = !$scope.hide;
