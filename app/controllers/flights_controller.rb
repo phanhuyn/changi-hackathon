@@ -10,6 +10,10 @@ class FlightsController < ApplicationController
         flight = params['flight_number']
         @flights = Flight.find_by_sql("SELECT * FROM flights
                         WHERE (flights.airlineCode)||(flights.number) = '#{flight}'")
+        cookies[:flight_id] = @flights[0].id
+        Rails.logger.info "In index"
+        Rails.logger.info cookies[:flight_id]
+
     else
         @flights = Flight.all
     end
@@ -18,6 +22,7 @@ class FlightsController < ApplicationController
   # GET /flights/1 GET /flights/1.json
   def show
     @chat_box = create_chatbox(@flight)
+    Rails.logger.info cookies[:flight_id]
     render json: @flight.to_json(:include => {:chat_box => {:include => :comments}})
   end
 

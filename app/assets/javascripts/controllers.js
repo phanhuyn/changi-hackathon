@@ -11,7 +11,7 @@
             $scope.step = step;
             console.log(step);
         }
-        poll();
+        // poll();
         function poll() {
             console.log("Tick");
             $timeout(poll, 2000);

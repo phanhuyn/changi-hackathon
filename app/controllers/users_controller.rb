@@ -10,6 +10,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    Rails.logger.info cookies[:user_id]
+    Rails.logger.info cookies[:flight_id]
   end
   # GET /users/new
   def new
