@@ -2,13 +2,21 @@
     angular.module('changi').controller('MainController', ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams',
         function ($scope, Flight, ChatService, ChatBox, $stateParams){
         $scope.flightNumber = $stateParams.flight;
+        $scope.step = 0;
         Flight.query({flight_number: $scope.flightNumber}, function(flight){
                 $scope.flight = flight[0];
                 console.log($scope.flight);
                 ChatService.setFlightId($scope.flight.id);
         });
         $scope.hide = true;
-        $scope.toggleChatBox = function() { $scope.hide = !$scope.hide;
+
+        $scope.toggleChatBox = function() {
+            $scope.hide = !$scope.hide;
+        }
+
+        $scope.markDone = function(step){
+            $scope.step = step;
+            console.log(step);
         }
     }]);
     angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', '$timeout',
