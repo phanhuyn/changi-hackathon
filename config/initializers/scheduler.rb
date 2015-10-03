@@ -1,5 +1,5 @@
 require 'rufus-scheduler'
-require 'HTTParty'
+require 'httparty'
 
 s = Rufus::Scheduler.singleton
 
