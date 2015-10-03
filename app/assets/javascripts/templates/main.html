@@ -116,7 +116,17 @@
 
 
             <div class="row">
-                
+                <div ng-controller="ChatBoxController">
+                <div ng-repeat="comment in comments">
+		            <p>{{comment.content}}</p>
+	            </div>Comment: <input type='text' name='commentBox' ng-model='newComment'>
+				<button type='submit' ng-click='addComment()'> Post
+				</button>
+				</br>	
+				<div ng-hide='user'>
+					Name: <input type="text" name='username' ng-model='username'>
+					<button type='submit' ng-click='addUser()'>Add user</button>
+	            </div>
             </div>
 
         </div>
@@ -210,6 +220,7 @@
             </div>
         </section>
     </main>
+
     <!-- Chatbox Footer -->
     <footer class="page-footer fixed-footer">
         <div class="row no-margin">
@@ -225,3 +236,5 @@
             </div>
         </div>
     </footer>
+
+ 
