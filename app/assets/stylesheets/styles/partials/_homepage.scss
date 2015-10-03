@@ -1,0 +1,53 @@
+.homepage {
+	text-align: center;
+	width: 100%;
+	color: white;
+	font-family: $font-family;
+	@include vertical-center;
+}
+
+.homepage>div {
+	display: block;
+}
+
+.shadow {
+	text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.text-light {
+	font-weight: 100;
+	font-size: 28px;
+}
+
+.text-bold {
+	font-family: $heading-font;
+	text-transform: uppercase;
+	font-weight: 400;
+}
+
+.italic {
+	font-style: italic;
+	font-family: $script-font;
+	font-size: 30px;
+	line-height: 1em;
+}
+
+.homepage-form {
+	width: 50%;
+	margin: auto;
+}
+
+.full-width {
+	width: 100%;
+}
+
+.homepage-input[type="text"]{
+	text-align: center;
+	font-size: 30px;
+	font-weight: 100;
+	text-transform: uppercase;
+}
+
+.homepage-input[type="placeholder"]{
+	text-transform: lowercase;
+}
