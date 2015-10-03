@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003081348) do
+ActiveRecord::Schema.define(version: 20151003082447) do
 
   create_table "chat_boxes", force: :cascade do |t|
     t.datetime "open_time"
@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(version: 20151003081348) do
     t.string   "terminal"
     t.string   "adi"
     t.string   "airlineCode"
-    t.string   "gate"
     t.datetime "delay"
   end
 
