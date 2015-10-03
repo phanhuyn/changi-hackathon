@@ -10,7 +10,11 @@ class FlightsController < ApplicationController
         flight = params['flight_number']
         @flights = Flight.find_by_sql("SELECT * FROM flights
                         WHERE (flights.airlineCode)||(flights.number) = '#{flight}'")
-        cookies[:flight_number] =@flights[0].airlineCode + @flights[0].number
+        if @flights.length > 0
+            f = @flights[0]
+            cookies[:flight_number] =f.airlineCode + f.number
+            create_chatbox(f)
+        end
         Rails.logger.info "In index"
         Rails.logger.info cookies[:flight_number]
 

@@ -1,0 +1,22 @@
+// bower:scss
+@import "materialize.scss";
+//@import "bower_components/Materialize/sass/materialize.scss";
+// endbower
+
+//tools and utilities
+@import "partials/mixins";
+@import "partials/fontello";
+@import "partials/variables";
+
+
+//base
+@import "partials/base.scss";
+
+//components
+@import "partials/backgroundSlider.scss";
+@import "partials/homepage.scss";
+@import "partials/mainapp.scss";
+@import "partials/chatbox.scss";
+@import "partials/timeline.scss";
+@import "partials/progressBar.scss";
+@import "partials/stage.scss";

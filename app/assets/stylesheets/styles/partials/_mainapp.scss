@@ -1,0 +1,111 @@
+.fixed-header {
+   position:absolute;
+   top:0px;
+   left:0px;
+   width:100%;
+   height: 56px;
+   overflow: hidden;
+}
+
+.nav-wrapper {
+	@include clearfix;
+	overflow: hidden;
+	background: none;
+}
+
+.logo-image {
+	margin-top: 2px;
+  	height: $navbar-height-mobile*0.8;
+  	@include totally-center;
+}
+
+.timeline-section,
+.chatbox-section {
+	position: absolute;
+	top: 0px;
+	bottom: 60px;
+	width: 100%;
+	left: 0px;
+	overflow: auto;
+}
+
+.chatbox-section {
+	top: 125px;
+}
+
+.button-collapse._alt {
+	padding: 0;
+}
+
+footer.page-footer {
+	padding: 0px;
+}
+
+.fixed-footer {
+   position:absolute;
+   left:0px;
+   bottom:0px;
+   height:60px;
+   width:100%;
+   overflow: hidden;
+}
+
+.chatbox-button {
+	width: 100%;
+	height: 60px;
+	padding: 0;
+	>i {
+		font-size: 40px;
+		line-height: 60px;
+	}
+}
+
+.chatbox-description {
+	font-size: 18px;
+	line-height: 60px;
+	font-weight: 300;
+}
+
+.row.no-margin {
+	margin: 0;
+}
+
+.col.no-padding {
+	padding: 0;
+}
+
+.message-text {
+	margin-right: 120px;
+}
+
+.message-send {
+	position: relative;
+	top: 20px;
+	float: right;
+	width: 100px;
+	margin-right: 7px;
+}
+
+
+
+
+/* Main App */
+.flight-banner{
+	text-align: center;
+	padding: 20px 0;
+	background-image: url(../images/2.jpg);
+	background-size: cover;
+	background-position: center center;
+}
+
+
+.departure-timeline {
+	color: #616161;
+	text-align: center;
+	padding-top: 15px;
+}
+
+
+.card-content {
+	color: #616161;
+}

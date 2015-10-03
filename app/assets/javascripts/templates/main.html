@@ -1,7 +1,6 @@
 <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
       <![endif]-->
-
 <!-- Navigation Bar -->
 <header class="fixed-header">
     <nav>
@@ -28,11 +27,9 @@
 </header>
 <!-- Main Body -->
 <main>
-    
     <!-- Timeline Pages -->
-    <div class="activity">
-        <div class="activity">           
-
+    <section class="timeline-section">
+        <!-- flight banner -->
         <div class="index-banner flight-banner">
             <h3 class="text-bold shadow">{{flight.airlineCode}}{{flight.number}}</h3>
             <h4 class="text-bold shadow">
@@ -44,70 +41,45 @@
                 Time: 16.30PM | Gate: T4
             </div>
         </div>
-
+        <!-- end flight banner -->
         <!-- Travel Timeline -->
         <div class="departure-timeline">
-            <!-- <h6 class="text-light">YOUR TIMELINE</h6> -->
-                            <form id="msform">
-                    <!-- progressbar -->
-                    <ul id="progressbar">
-                        <li class="active">Start you journey</li>
-                        <li>Check in</li>
-                        <li>Security Check</li>
-                        <li>Boarding</li>
-                        <li>Enjoy your flight!</li>
-                    </ul>
-                    <!-- fieldsets -->
-                    <fieldset>
-                        <h2 class="fs-title">Create your account</h2>
-                        <h3 class="fs-subtitle">This is step 1</h3>
-                        <input type="text" name="email" placeholder="Email" />
-                        <input type="password" name="pass" placeholder="Password" />
-                        <input type="password" name="cpass" placeholder="Confirm Password" />
+            <form id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active">Check In</li>
+                    <li>Departure Hall</li>
+                    <li>Security Screening</li>
+                    <li>Boarding</li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    <input type="button" name="next" class="next action-button btn" value="Next" />
+                    <div ng-include="'stage1.html'"></div>
+                </fieldset>
+
+                <fieldset>
+                    <input type="button" name="previous" class="previous action-button btn" value="Previous" />
                         <input type="button" name="next" class="next action-button btn" value="Next" />
-                    </fieldset>
-                    <fieldset>
-                        <h2 class="fs-title">Social Profiles</h2>
-                        <h3 class="fs-subtitle">Your presence on the social network</h3>
-                        <input type="text" name="twitter" placeholder="Twitter" />
-                        <input type="text" name="facebook" placeholder="Facebook" />
-                        <input type="text" name="gplus" placeholder="Google Plus" />
-                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
+                    <div ng-include="'stage2.html'"></div>
+                </fieldset>
+
+                <fieldset>
+                    <input type="button" name="previous" class="previous action-button btn" value="Previous" />
                         <input type="button" name="next" class="next action-button btn" value="Next" />
-                    </fieldset>
-                    <fieldset>
-                        <h2 class="fs-title">Social Profiles</h2>
-                        <h3 class="fs-subtitle">Your presence on the social network</h3>
-                        <input type="text" name="twitter" placeholder="Twitter" />
-                        <input type="text" name="facebook" placeholder="Facebook" />
-                        <input type="text" name="gplus" placeholder="Google Plus" />
-                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
-                        <input type="button" name="next" class="next action-button btn" value="Next" />
-                    </fieldset>
-                    <fieldset>
-                        <h2 class="fs-title">Social Profiles</h2>
-                        <h3 class="fs-subtitle">Your presence on the social network</h3>
-                        <input type="text" name="twitter" placeholder="Twitter" />
-                        <input type="text" name="facebook" placeholder="Facebook" />
-                        <input type="text" name="gplus" placeholder="Google Plus" />
-                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
-                        <input type="button" name="next" class="next action-button btn" value="Next" />
-                    </fieldset>
-                    <fieldset>
-                        <h2 class="fs-title">Personal Details</h2>
-                        <h3 class="fs-subtitle">We will never sell it</h3>
-                        <input type="text" name="fname" placeholder="First Name" />
-                        <input type="text" name="lname" placeholder="Last Name" />
-                        <input type="text" name="phone" placeholder="Phone" />
-                        <textarea name="address" placeholder="Address"></textarea>
-                        <input type="button" name="previous" class="previous action-button btn" value="Previous" />
-                        <!-- <input type="submit" name="submit" class="submit action-button btn" value="Submit" /> -->
-                    </fieldset>
-                </form>
+                    <div ng-include="'stage3.html'"></div>
+                </fieldset>
+
+                <fieldset>
+                <input type="button" name="previous" class="previous action-button btn" value="Previous" />
+                    <div ng-include="'stage4.html'"></div>
+                </fieldset>
+            </form>
         </div>
-    </div>
+        <!-- end Travel Timeline -->
+    </section>
     
-    <section class="chatbox" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
+    <section class="chatbox-section" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
         <!-- <header class="top-bar">
                 <div class="left">
                     <h1>FlightTalk</h1>
