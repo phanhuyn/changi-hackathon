@@ -7,6 +7,10 @@
                 ChatService.setFlightId($scope.flight.id);
             });
         };
+        $scope.hide = true;
+        $scope.toggleChatBox = function() {
+            $scope.hide = !$scope.hide;
+        }
     }]);
     angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', '$timeout',
         function($scope, ChatService, ChatBox, Comment, User, $timeout){
@@ -43,10 +47,7 @@
             });
         };
     }]);
-    angular.module('changi').controller('MainController', ['$scope', function($scope){
-        $scope.hide = true;
-        $scope.toggleChatBox = function() {
-            $scope.hide = !$scope.hide;
-        }
+    angular.module('changi').controller('WelcomeController', ['$scope', function($scope){
+        $scope.flightNumber = "123";
     }]);
 })();
