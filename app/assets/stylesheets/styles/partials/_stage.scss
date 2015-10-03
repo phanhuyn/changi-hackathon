@@ -1,0 +1,221 @@
+*, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
+.clearfix:before, .clearfix:after { display: table; content: ''; }
+.clearfix:after { clear: both; }
+
+body {
+	color: #fff;
+	font-weight: 400;
+	font-size: 1em;
+	font-family: 'Raleway', Arial, sans-serif;
+}
+
+@font-face {
+      font-family: 'fontello';
+      src: url('../fonts/fontello.eot?32229156');
+      src: url('../fonts/fontello.eot?32229156#iefix') format('embedded-opentype'),
+           url('../fonts/fontello.woff?32229156') format('woff'),
+           url('../fonts/fontello.ttf?32229156') format('truetype'),
+           url('../fonts/fontello.svg?32229156#fontello') format('svg');
+      font-weight: normal;
+      font-style: normal;
+    }
+     
+     
+.demo-icon
+{
+  font-family: "fontello";
+  font-style: normal;
+  font-size: 2em;
+  speak: none;
+  color: #000;
+  /* For safety - reset parent styles, that can break glyph codes*/
+  font-variant: normal;
+  text-transform: none;
+ 
+  /* You can be more comfortable with increased icons size */
+  /* font-size: 120%; */
+ 
+  /* Font smoothing. That was taken from TWBS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+ 
+  /* Uncomment for 3D effect */
+  /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
+
+#stage-advice > .row {
+	margin-bottom: 0;
+}
+
+.the-icons {
+	display: inline-block;
+	margin: 10px;
+}
+
+#icons {
+	text-align: center;
+}
+
+/* Common style */
+.grid figure.effect-steve {
+	position: relative;
+	display: inline-block;
+	float: left;
+	overflow: hidden;
+	width: 50%;
+	height: auto;
+	background: #3085a3;
+	text-align: center;
+	cursor: pointer;
+	margin: 0%;
+}
+
+.grid figure.effect-steve img {
+	position: relative;
+	display: block;
+	min-height: 100%;
+	max-width: 100%;
+	opacity: 0.8;
+}
+
+.grid figure.effect-steve figcaption {
+	padding: 2em;
+	color: #fff;
+	font-size: 0.60em;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.grid figure.effect-steve figcaption::before,
+.grid figure.effect-steve figcaption::after {
+	pointer-events: none;
+}
+
+.grid figure.effect-steve figcaption,
+.grid figure.effect-steve figcaption > a {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/* Anchor will cover the whole item by default */
+/* For some effects it will show as a button */
+.grid figure.effect-steve figcaption > a {
+	z-index: 1000;
+	text-indent: 200%;
+	white-space: nowrap;
+	font-size: 0;
+	opacity: 0;
+}
+
+.grid figure.effect-steve h2 {
+	word-spacing: -0.15em;
+	font-weight: 300;
+	text-transform: uppercase;
+	font-size: 1.75em;
+}
+
+.grid figcaption p {
+	font-weight: 100;
+}
+
+.grid figure.effect-steve h2 span {
+	font-weight: 800;
+}
+
+.grid figure.effect-steve h2,
+.grid figure.effect-steve p {
+	margin: 0;
+}
+
+.grid figure.effect-steve p {
+	letter-spacing: 1px;
+	font-size: 100%;
+}
+
+/*-----------------*/
+/***** Steve *****/
+/*-----------------*/
+
+figure.effect-steve {
+	z-index: auto;
+	overflow: visible;
+	background: #000;
+}
+
+figure.effect-steve:before,
+figure.effect-steve h2:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -1;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	content: '';
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-steve:before {
+	box-shadow: 0 3px 30px rgba(0,0,0,0.8);
+	opacity: 0;
+}
+
+figure.effect-steve figcaption {
+	z-index: 1;
+}
+
+figure.effect-steve img {
+	opacity: 1;
+	-webkit-transition: -webkit-transform 0.35s;
+	transition: transform 0.35s;
+	-webkit-transform: perspective(1000px) translate3d(0,0,0);
+	transform: perspective(1000px) translate3d(0,0,0);
+}
+
+figure.effect-steve h2,
+figure.effect-steve p {
+	background: #fff;
+	color: #2d434e;
+}
+
+figure.effect-steve h2 {
+	position: relative;
+	padding: 0.25em;
+}
+
+figure.effect-steve h2:before {
+	box-shadow: 0 1px 10px rgba(0,0,0,0.5);
+}
+
+figure.effect-steve p {
+	margin-top: 1em;
+	padding: 0.5em;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(0.9,0.9,1);
+	transform: scale3d(0.9,0.9,1);
+}
+
+figure.effect-steve:hover:before {
+	opacity: 1;
+}
+
+figure.effect-steve:hover img {
+	-webkit-transform: perspective(1000px) translate3d(0,0,21px);
+	transform: perspective(1000px) translate3d(0,0,21px);
+}
+
+figure.effect-steve:hover h2:before {
+	opacity: 0;
+}
+
+figure.effect-steve:hover p {
+	opacity: 1;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
