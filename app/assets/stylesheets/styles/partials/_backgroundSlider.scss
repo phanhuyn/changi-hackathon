@@ -29,27 +29,6 @@
     -ms-animation: imageAnimation 36s linear infinite 0s;
     animation: imageAnimation 36s linear infinite 0s;
 }
-/*.cb-slideshow li div {
-    z-index: 1000;
-    position: absolute;
-    bottom: 30px;
-    left: 0px;
-    width: 100%;
-    text-align: center;
-    opacity: 0;
-    -webkit-animation: titleAnimation 36s linear infinite 0s;
-    -moz-animation: titleAnimation 36s linear infinite 0s;
-    -o-animation: titleAnimation 36s linear infinite 0s;
-    -ms-animation: titleAnimation 36s linear infinite 0s;
-    animation: titleAnimation 36s linear infinite 0s;
-}
-.cb-slideshow li div h3 {
-    font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
-    font-size: 160px;
-    padding: 0 30px;
-    line-height: 120px;
-    color: rgba(255,255,255,0.8);
-}*/
 .cb-slideshow li:nth-child(1) span { background-image: url(../images/1.jpg) }
 .cb-slideshow li:nth-child(2) span {
     background-image: url(../images/2.jpg);
