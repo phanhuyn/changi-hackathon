@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  resources :gates
-  resources :places
-  resources :comments
-  resources :users
-  resources :chat_boxes
-  resources :flights
+  resources :gates, defaults: {format: :json}
+  resources :places, defaults: {format: :json}
+  resources :comments, defaults: {format: :json}
+  resources :users, defaults: {format: :json}
+  resources :chat_boxes, defaults: {format: :json}
+  resources :flights, defaults: {format: :json}
   root to: 'application#angular'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
