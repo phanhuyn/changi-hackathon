@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gate.name %>
+</p>
+
+<p>
+  <strong>Longitude:</strong>
+  <%= @gate.longitude %>
+</p>
+
+<p>
+  <strong>Latitude:</strong>
+  <%= @gate.latitude %>
+</p>
+
+<%= link_to 'Edit', edit_gate_path(@gate) %> |
+<%= link_to 'Back', gates_path %>
