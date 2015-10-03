@@ -1,8 +1,11 @@
 (function() {
     angular.module('changi').controller('MainController', 
-        ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout',
-        function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout){
+        ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout', '$state',
+        function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout, $state){
         $scope.flight = FlightService.getFlight();
+        if($scope.flight == null){
+            $state.go('home');
+        }
         $scope.hide = true;
         $scope.toggleChatBox = function() {
             $scope.hide = !$scope.hide;
