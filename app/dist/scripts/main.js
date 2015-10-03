@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".button-collapse").sideNav(),$("#chatbox-toggle").click(function(){$("#chatbox").toggleClass("hide")})});

@@ -1,0 +1,261 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>changi frontend</title>
+    <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/main.css">
+    <!-- endbuild -->
+    <!-- build:js scripts/vendor/modernizr.js -->
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <!-- endbuild -->
+</head>
+
+<body>
+    <!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+    <!-- Navigation Bar -->
+    <header class="fixed-header">
+        <nav>
+            <div class="nav-wrapper container">
+                <a href="#!" class="brand-logo">
+                    <img class="logo-image" src="images/vinturer.png" alt="Team Vinturer">
+                </a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                    <li><a href="index.html">Sign Out</a></li>
+                    <li><a href="#.html">About Us</a></li>
+                    <li><a href="mainApp.html">Refresh</a></li>
+                </ul>
+                <ul class="right hide-on-large-only">
+                    <li>
+                        <a href="mainApp.html" class="button-collapse _alt">
+                            <i class="material-icons">repeat</i>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="index.html">Sign Out</a></li>
+                    <li><a href="#.html">About Us</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- Main Body -->
+    <main>
+        <div class="activity">
+            <div class="index-banner flight-banner">
+                <!-- <ul class="cb-slideshow">
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ul> -->
+                <h3 class="text-bold shadow">VN663</h3>
+                <h4 class="text-bold shadow">
+        SIN
+        <span class="icon icon-flight"></span>
+        HAN
+    </h4>
+                <div>
+                    Time: 16.30PM | Gate: T4
+                </div>
+            </div>
+            <div class="departure-timeline">
+                <h6 class="text-light">YOUR TIMELINE</h6>
+                <br>
+                <ol class="timeline">
+                    <li class="timeline__step done">
+                        <input class="timeline__step-radio" id="trigger1{{identifier}}" name="trigger{{identifier}}" type="radio">
+                        <label class="timeline__step-label" for="trigger1{{identifier}}">
+                            <span class="timeline__step-content">
+                    12 May 2013
+                </span>
+                        </label>
+                        <span class="timeline__step-title">
+                Check-in</span>
+                        <i class="timeline__step-marker">1</i>
+                    </li>
+                    <li class="timeline__step done">
+                        <input class="timeline__step-radio" id="trigger2{{identifier}}" name="trigger{{identifier}}" type="radio">
+                        <label class="timeline__step-label" for="trigger2{{identifier}}">
+                            <span class="timeline__step-content">
+                        14 May 2013</span>
+                        </label>
+                        <span class="timeline__step-title">
+                        Immigration Check</span>
+                        <i class="timeline__step-marker">2</i>
+                    </li>
+                    <li class="timeline__step">
+                        <input class="timeline__step-radio" id="trigger3{{identifier}}" name="trigger{{identifier}}" type="radio">
+                        <label class="timeline__step-label" for="trigger3{{identifier}}">
+                            <span class="timeline__step-content">
+                                15 May 2013</span>
+                        </label>
+                        <span class="timeline__step-title">
+                                Boarding</span>
+                        <i class="timeline__step-marker">3</i>
+                    </li>
+                    <li class="timeline__step">
+                        <input class="timeline__step-radio" id="trigger4{{identifier}}" name="trigger{{identifier}}" type="radio">
+                        <label class="timeline__step-label" for="trigger4{{identifier}}">
+                            <span class="timeline__step-content">
+                                        16 May 2013</span>
+                        </label>
+                        <span class="timeline__step-title">
+                                        Enjoy<br>your flight!</span>
+                        <i class="timeline__step-marker">4</i>
+                    </li>
+                </ol>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-image">
+                            <img src="images/place1.jpg">
+                            <span class="card-title">Duty Free Shopping</span>
+                        </div>
+                        <div class="card-content">
+                            <p>One of the best parts of travelling is Duty Free shopping while waiting for your flight. At Changi Airport, you’ll get to enjoy prices cheaper than anywhere else in town. If you have just two hours to spare, maximise your time at our Duty Free favourites: Cosmetics & Perfumes by Shilla, Liquor & Tobacco by DFS and Electronics & Computers by Sprint-Cass.</p>
+                        </div>
+                        <div class="card-action">
+                            <a href="#">This is a link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section class="chatbox hide" id="chatbox">
+            <!-- <header class="top-bar">
+                <div class="left">
+                    <h1>FlightTalk</h1>
+                </div>
+                <div class="right">
+                    <i class="small material-icons">chat</i>
+                </div>
+            </header> -->
+            <ol class="discussion">
+                <li class="other">
+                    <div class="avatar">
+                        <img src="images/avatar.png" />
+                    </div>
+                    <div class="messages">
+                        <p>yeah, they do early flights cause they connect with big airports. they wanna get u to your connection</p>
+                        <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                    </div>
+                </li>
+                <li class="self">
+                    <div class="avatar">
+                        <img src="images/avatar.png" />
+                    </div>
+                    <div class="messages">
+                        <p>That makes sense.</p>
+                        <p>It's a pretty small airport.</p>
+                        <time datetime="2009-11-13T20:14">37 mins</time>
+                    </div>
+                </li>
+                <li class="other">
+                    <div class="avatar">
+                        <img src="images/avatar.png" />
+                    </div>
+                    <div class="messages">
+                        <p>that mongodb thing looks good, huh?</p>
+                        <p>tiny master db, and huge document store</p>
+                    </div>
+                </li>
+                <li class="self">
+                    <div class="avatar">
+                        <img src="images/avatar.png" />
+                    </div>
+                    <div class="messages">
+                        <p>That makes sense.</p>
+                        <p>It's a pretty small airport.</p>
+                        <time datetime="2009-11-13T20:14">37 mins</time>
+                    </div>
+                </li>
+                <li class="other">
+                    <div class="avatar">
+                        <img src="images/avatar.png" />
+                    </div>
+                    <div class="messages">
+                        <p>that mongodb thing looks good, huh?</p>
+                        <p>tiny master db, and huge document store</p>
+                    </div>
+                </li>
+                <li class="self">
+                    <div class="avatar">
+                        <img src="images/avatar.png" />
+                    </div>
+                    <div class="messages">
+                        <p>That makes sense.</p>
+                        <p>It's a pretty small airport.</p>
+                        <time datetime="2009-11-13T20:14">37 mins</time>
+                    </div>
+                </li>
+                <li class="other">
+                    <div class="avatar">
+                        <img src="images/avatar.png" />
+                    </div>
+                    <div class="messages">
+                        <p>that mongodb thing looks good, huh?</p>
+                        <p>tiny master db, and huge document store</p>
+                    </div>
+                </li>
+            </ol>
+            <div class="row message-input">
+                <div class="message-text">
+                    <div class="input-field col s12">
+                        <input id="" type="text" class="">
+                        <label for="">Your Message</label>
+                    </div>
+                </div>
+                <button class="btn waves-effect waves-light message-send" type="submit" name="action">SEND
+                    <i class="material-icons right">send</i>
+                </button>
+            </div>
+        </section>
+    </main>
+    <!-- Chatbox Footer -->
+    <footer class="page-footer fixed-footer">
+        <div class="row no-margin">
+            <div class="col s10">
+                <div class="chatbox-description">
+                    Know more about your flightmate!
+                </div>
+            </div>
+            <div class="col s2 no-padding">
+                <button id="chatbox-toggle" class="btn waves-effect waves-light transparent chatbox-button">
+                    <i class="medium material-icons">chat</i>
+                </button>
+            </div>
+        </div>
+    </footer>
+    <!-- build:js scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
+    <script src="scripts/vendor.js"></script>
+    <script src="scripts/materialize.min.js"></script>
+    <!-- build:js scripts/main.js -->
+    <script src="scripts/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>
