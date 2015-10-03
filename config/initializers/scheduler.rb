@@ -25,7 +25,7 @@ s.every '500m' do
                 :adi => 'a',
                 :delay => nil
             })
-            new_flight.gate = Gate.find(rand(10))
+            new_flight.gate = Gate.find(rand(9)+1)
             new_flight.save()
         end
     end
