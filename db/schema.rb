@@ -11,12 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150929083708) do
+ActiveRecord::Schema.define(version: 20151002134402) do
 
   create_table "chat_boxes", force: :cascade do |t|
     t.datetime "open_time"
     t.datetime "close_time"
-    t.integer  "flight_id"
+    t.integer  "flight_id",  null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,9 +24,9 @@ ActiveRecord::Schema.define(version: 20150929083708) do
   add_index "chat_boxes", ["flight_id"], name: "index_chat_boxes_on_flight_id"
 
   create_table "comments", force: :cascade do |t|
-    t.integer  "user_id"
-    t.string   "content"
-    t.integer  "chat_box_id"
+    t.integer  "user_id",     null: false
+    t.string   "content",     null: false
+    t.integer  "chat_box_id", null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
   end
@@ -37,12 +37,20 @@ ActiveRecord::Schema.define(version: 20150929083708) do
   create_table "flights", force: :cascade do |t|
     t.string   "number"
     t.datetime "scheduled"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "status"
+    t.string   "aircraft"
+    t.string   "city"
+    t.string   "airportCode"
+    t.string   "terminal"
+    t.string   "adi"
+    t.string   "airlineCode"
+    t.string   "gate"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string   "name"
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
