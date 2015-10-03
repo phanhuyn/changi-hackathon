@@ -1,0 +1,29 @@
+<%= form_for(@gate) do |f| %>
+  <% if @gate.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@gate.errors.count, "error") %> prohibited this gate from being saved:</h2>
+
+      <ul>
+      <% @gate.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :longitude %><br>
+    <%= f.text_field :longitude %>
+  </div>
+  <div class="field">
+    <%= f.label :latitude %><br>
+    <%= f.text_field :latitude %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

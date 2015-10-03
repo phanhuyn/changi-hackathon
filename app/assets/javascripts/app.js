@@ -6,6 +6,11 @@
               url: '/home',
               templateUrl: 'home.html',
               controller: 'HomeController'
+            })
+            .state('main', {
+              url: '/main',
+              templateUrl: 'main.html',
+              controller: 'MainController'
             });
             $urlRouterProvider.otherwise('home');
         }]);

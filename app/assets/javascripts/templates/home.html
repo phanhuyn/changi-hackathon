@@ -1,10 +1,33 @@
 <div>
-	<form>
-		Enter your flight number: <input type='text' name='flight_number' ng-model='flightNumber'>
-		<button type='submit' ng-click="inputFlight()"> Submit
-		</button>
-	</form>
-	<div ng-controller="ChatBoxController">
+	<!--[if lt IE 10]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+      <![endif]-->
+
+    <ul class="cb-slideshow">
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+        <li><span></span></li>
+    </ul>
+
+    <div class="homepage">
+        <h4 class="text-light shadow">Enter flight number<br>and</h4>
+        <h2 class="text-bold shadow">embrace your journey</h2>
+        <div class="italic shadow">with</div>
+        <h2 class="text-bold shadow">Changi</h2>
+        <form action="" class="homepage-form center-align">
+            <div class="input-field">
+                <input placeholder="" type="text" class="homepage-input" name='flight_number' ng-model='flightNumber'>
+                <label for=""></label>
+            </div>
+            <!-- <button class="btn waves-effect waves-light full-width" type="submit" name="action">Lets go!
+                </button> -->
+            <a class="waves-effect waves-light btn full-width" href="mainApp.html" ng-click="inputFlight()">Lets go!</a>
+        </form>
+
+        <div ng-controller="ChatBoxController">
 		<div ng-repeat="comment in comments">
 			<p>{{comment.content}}</p>
 		</div>
@@ -17,5 +40,6 @@
 			<button type='submit' ng-click='addUser()'>Add user</button>
 		</div>
 	</div>
+    </div>
 </div>
 

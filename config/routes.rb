@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :gates
+  resources :places
   resources :comments
   resources :users
   resources :chat_boxes
