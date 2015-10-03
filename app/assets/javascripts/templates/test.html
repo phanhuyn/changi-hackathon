@@ -1,4 +1,4 @@
-<div>
+<div style = "color:black">
     <form>
         Enter your flight number: <input type='text' name='flight_number' ng-model='flightNumber'>
         <button type='submit' ng-click="inputFlight()"> Submit
@@ -6,7 +6,7 @@
     </form>
     <div ng-controller="ChatBoxController">
         <div ng-repeat="comment in comments">
-            <p>{{comment.content}}</p>
+            <span>{{comment.user.name}}</span> SAID: <span>{{comment.content}}</span>
         </div>
         Comment: <input type='text' name='commentBox' ng-model='newComment'>
         <button type='submit' ng-click='addComment()'> Post

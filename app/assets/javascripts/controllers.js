@@ -8,14 +8,15 @@
             });
         };
     }]);
-    angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', 
-        function($scope, ChatService, ChatBox, Comment, User){
+    angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', '$timeout',
+        function($scope, ChatService, ChatBox, Comment, User, $timeout){
         $scope.user = null;
         $scope.$watch(function(){return ChatService.getFlightId();}, function(flight_id){
             if(flight_id){
                 ChatBox.query({flight_id: ChatService.getFlightId()}, function(chatbox){
                     $scope.chatbox = chatbox[0];
                     $scope.comments = $scope.chatbox.comments;
+                    poll();
                 });
             }
         }, true);
@@ -24,6 +25,7 @@
                 console.log("Comment added");
                 console.log(res.toJSON());
                 $scope.comments.push(res.toJSON());
+                $scope.newComment = "";
             })
         }
         $scope.addUser = function(){
@@ -32,14 +34,14 @@
                 console.log("User added");
             });
         }
-        // while(true){
-        //     setTimeout(function () {
-        //         console.log("A");
-        //         $scope.$apply(function(){
-                    
-        //         });
-        //     }, 1000);
-        // }
+
+        function poll() {
+            Comment.query({chat_box_id:$scope.chatbox.id}, function(comments){
+                console.log("Updated comments");
+                $scope.comments = comments;
+                $timeout(poll, 2000);
+            });
+        };
     }]);
     angular.module('changi').controller('MainController', ['$scope', function($scope){
         $scope.hide = true;
