@@ -21,4 +21,7 @@
             }
         }, true);
     }]);
+    angular.module('changi').controller('ChatBoxController', ['$scope', function($scope){
+        
+    }]);
 })();
