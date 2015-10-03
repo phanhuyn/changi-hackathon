@@ -38,7 +38,7 @@
                 HAN
             </h4>
             <div>
-                Time: 16.30PM | Gate: T4
+                Time: {{flight.scheduled | date : 'hh.mma'}} | Gate: {{flight.gate.id}}
             </div>
         </div>
         <!-- end flight banner -->
