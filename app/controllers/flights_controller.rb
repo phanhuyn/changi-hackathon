@@ -83,7 +83,7 @@ class FlightsController < ApplicationController
 
     def create_chatbox(flight)
         if flight.chat_box.nil?
-            chat_box = flight.build_chat_box({
+            chat_box = flight.create_chat_box({
                 :open_time => flight.scheduled - 1.hour,
                 :close_time => flight.scheduled
             })
