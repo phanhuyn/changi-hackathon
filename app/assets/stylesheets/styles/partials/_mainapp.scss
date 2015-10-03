@@ -19,8 +19,8 @@
   	@include totally-center;
 }
 
-.activity,
-.chatbox {
+.timeline-section,
+.chatbox-section {
 	position: absolute;
 	top: 0px;
 	bottom: 60px;
@@ -29,7 +29,7 @@
 	overflow: auto;
 }
 
-.chatbox {
+.chatbox-section {
 	top: 125px;
 }
 
