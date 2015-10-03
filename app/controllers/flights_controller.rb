@@ -5,7 +5,14 @@ class FlightsController < ApplicationController
   # GET /flights
   # GET /flights.json
   def index
-    @flights = Flight.all
+    Rails.logger.info params
+    if params.has_key?("flight_number")
+        flight = params['flight_number']
+        @flights = Flight.find_by_sql("SELECT * FROM flights
+                        WHERE (flights.airlineCode)||(flights.number) = '#{flight}'")
+    else
+        @flights = Flight.all
+    end
   end
 
   # GET /flights/1 GET /flights/1.json
