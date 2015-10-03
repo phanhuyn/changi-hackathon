@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151003072804) do
+ActiveRecord::Schema.define(version: 20151003074130) do
 
   create_table "chat_boxes", force: :cascade do |t|
     t.datetime "open_time"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20151003072804) do
     t.float    "latitude"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "address"
   end
 
   create_table "users", force: :cascade do |t|
