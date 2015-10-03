@@ -54,7 +54,7 @@
                 <h6 class="text-light">YOUR TIMELINE</h6>
                 <br>
                 <ol class="timeline">
-                    <li class="timeline__step done">
+                    <li class="timeline__step" ng-class="{done: step >= 1}" ng-click="markDone(1)">
                         <input class="timeline__step-radio" id="trigger1{{identifier}}" name="trigger{{identifier}}" type="radio">
                         <label class="timeline__step-label" for="trigger1{{identifier}}">
                             <span class="timeline__step-content">
@@ -65,7 +65,7 @@
                 Check-in</span>
                         <i class="timeline__step-marker">1</i>
                     </li>
-                    <li class="timeline__step done">
+                    <li class="timeline__step" ng-class="{done: step >= 2}" ng-click="markDone(2)">
                         <input class="timeline__step-radio" id="trigger2{{identifier}}" name="trigger{{identifier}}" type="radio">
                         <label class="timeline__step-label" for="trigger2{{identifier}}">
                             <span class="timeline__step-content">
@@ -75,7 +75,7 @@
                         Immigration Check</span>
                         <i class="timeline__step-marker">2</i>
                     </li>
-                    <li class="timeline__step">
+                    <li class="timeline__step" ng-class="{done: step >= 3}" ng-click="markDone(3)">
                         <input class="timeline__step-radio" id="trigger3{{identifier}}" name="trigger{{identifier}}" type="radio">
                         <label class="timeline__step-label" for="trigger3{{identifier}}">
                             <span class="timeline__step-content">
@@ -85,7 +85,7 @@
                                 Boarding</span>
                         <i class="timeline__step-marker">3</i>
                     </li>
-                    <li class="timeline__step">
+                    <li class="timeline__step" ng-class="{done: step >= 4}" ng-click="markDone(4)">
                         <input class="timeline__step-radio" id="trigger4{{identifier}}" name="trigger{{identifier}}" type="radio">
                         <label class="timeline__step-label" for="trigger4{{identifier}}">
                             <span class="timeline__step-content">

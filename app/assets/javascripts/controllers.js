@@ -16,6 +16,7 @@
 
         $scope.markDone = function(step){
             $scope.step = step;
+            console.log(step);
         }
     }]);
     angular.module('changi').controller('ChatBoxController', ['$scope', 'ChatService', 'ChatBox', 'Comment', 'User', '$timeout',
