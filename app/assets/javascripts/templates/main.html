@@ -130,7 +130,7 @@
             </div>
 
         </div>
-        <section class="chatbox hide" id="chatbox">
+        <section class="chatbox" id="chatbox" ng-hide="hide">
             <!-- <header class="top-bar">
                 <div class="left">
                     <h1>FlightTalk</h1>
@@ -230,7 +230,7 @@
                 </div>
             </div>
             <div class="col s2 no-padding">
-                <button id="chatbox-toggle" class="btn waves-effect waves-light transparent chatbox-button">
+                <button id="chatbox-toggle" class="btn waves-effect waves-light transparent chatbox-button" ng-click="hideTextBox()">
                     <i class="medium material-icons">chat</i>
                 </button>
             </div>

@@ -37,6 +37,9 @@
         }
     }]);
     angular.module('changi').controller('MainController', ['$scope', function($scope){
-        
+        $scope.hide = true;
+        $scope.hideTextBox = function() {
+            $scope.hide = !$scope.hide;
+        }
     }]);
 })();
