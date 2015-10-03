@@ -28,9 +28,8 @@
 <!-- Main Body -->
 <main>
     <!-- Timeline Pages -->
-    <div class="activity">
-        <div class="activity">           
-
+    <section class="timeline-section">
+        <!-- flight banner -->
         <div class="index-banner flight-banner">
             <h3 class="text-bold shadow">{{flight.airlineCode}}{{flight.number}}</h3>
             <h4 class="text-bold shadow">
@@ -42,40 +41,39 @@
                 Time: 16.30PM | Gate: T4
             </div>
         </div>
-
+        <!-- end flight banner -->
         <!-- Travel Timeline -->
         <div class="departure-timeline">
-<<<<<<< HEAD
-            <!-- <h6 class="text-light">YOUR TIMELINE</h6> -->
-                            <form id="msform">
-                    <!-- progressbar -->
-                    <ul id="progressbar">
-                        <li class="active">Start you journey</li>
-                        <li>Check in</li>
-                        <li>Security Check</li>
-                        <li>Boarding</li>
-                    </ul>
-                    <!-- fieldsets -->
-                    <fieldset>
-                        <div ng-include="'stage1.html'"></div>
-                    </fieldset>
-                    <fieldset>
-                        <div ng-include="'stage2.html'"></div>
-                    </fieldset>
-                    <fieldset>
-                        <div ng-include="'stage3.html'"></div>
-                    </fieldset>
-                    <fieldset>
-                        <div ng-include="'stage4.html'"></div>
-                    </fieldset>
-                    <fieldset>
-                        <div ng-include="'stage5.html'"></div>
-                    </fieldset>
-                </form>
+            <form id="msform">
+                <!-- progressbar -->
+                <ul id="progressbar">
+                    <li class="active">Check In</li>
+                    <li>Departure Hall</li>
+                    <li>Security Screening</li>
+                    <li>Boarding</li>
+                </ul>
+                <!-- fieldsets -->
+                <fieldset>
+                    <div ng-include="'stage1.html'"></div>
+                </fieldset>
+
+                <fieldset>
+                    <div ng-include="'stage2.html'"></div>
+                </fieldset>
+
+                <fieldset>
+                    <div ng-include="'stage3.html'"></div>
+                </fieldset>
+
+                <fieldset>
+                    <div ng-include="'stage4.html'"></div>
+                </fieldset>
+            </form>
         </div>
-    </div>
+        <!-- end Travel Timeline -->
+    </section>
     
-    <section class="chatbox" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
+    <section class="chatbox-section" id="chatbox" ng-hide="hide" ng-controller="ChatBoxController">
         <!-- <header class="top-bar">
                 <div class="left">
                     <h1>FlightTalk</h1>
