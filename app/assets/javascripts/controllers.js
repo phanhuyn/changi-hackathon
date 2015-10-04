@@ -3,7 +3,7 @@
         ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout', '$state',
         function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout, $state){
         $scope.flight = FlightService.getFlight();
-        $scope.notice = null;
+        $scope.notice = false;
         $scope.noticement = '';
         if($scope.flight == null){
             $state.go('home');
@@ -117,7 +117,14 @@
                     alert("No Flight found, try again!");
                 });
             }
-            
-            
+    }]);
+    angular.module('changi').controller('AdminController', ['$scope', 'Flight', function($scope, Flight){
+        $scope.ready = false;
+        $scope.getFlight = function(){
+            Flight.get({id: $scope.flight_id}, function(flight) {
+                console.log(flight);
+                $scope.flight = flight;
+            });
+        }
     }]);
 })();

@@ -72,7 +72,13 @@ class FlightsController < ApplicationController
   def delay
     Rails.logger.info "Flight ID= " + params["flight_id"]
     Rails.logger.info "Delay time= " + params["delay"]
-    render json: {"success": "true"}
+    @flight=Flight.find(params['flight_id'])
+    @flight.delay=params['delay']
+    respond_to do |format|
+      if @flight.save
+        format.json { render :show, status: :created, location: @flight}
+      end
+    end
   end
   # DELETE /flights/1
   # DELETE /flights/1.json
