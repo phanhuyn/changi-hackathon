@@ -2,19 +2,19 @@
     <div class="container">
         <div class="row">
             <div class="col s12">
-                <h3 class="text-bold shadow">Check In</h3>
-                <h4 class="text-light">
+                <h3 class="step-title">Check In</h3>
+                <h4 class="step-description">
                     Let's get your journey with Changi from our friendly check-in row :)
                 </h4>
-                <h5>
+                <h5 class="step-note">
                     Before {{checkinTime | date: 'hh:mm a'}}
                 </h5>
-                <h5>
+                <h5 class="step-note">
                     Terminal {{flight.terminal}} Gate {{flight.gate.id}}
                 </h5>
             </div>
             <div class="col s12">
-                <div class="card-action">
+                <div class="card-action step-button">
                     <a type="button" name="next" class="next action-button btn" ng-click="nextState()">Next
                     </a>
                 </div>
@@ -23,20 +23,33 @@
     </div>
 </section>
 <!-- recommendation icon group -->
-<div class="icon-group">
-    <div class="icon-button-wrapper">
-        <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-bed icon-large"></span></a>
+
+<section class="stage-nearby" id="stage-nearby">
+    <div class="container">
+        <h3 class="step-title _alt">You may like this</h3>
+    <h4 class="step-description _alt">
+        Some very interesting places are just very near to you.
+    </h4>
     </div>
+    
+<!-- DO NOT COMMENT, REINDENT, FORMAT THIS SECTION -->
+    <div class="icon-group">
     <div class="icon-button-wrapper">
-        <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-food icon-large"></span></a>
-    </div>
-    <div class="icon-button-wrapper">
-        <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-power icon-large"></span></a>
-    </div>
-    <div class="icon-button-wrapper">
-        <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-basket icon-large"></span></a>
-    </div>
-</div>
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-bed icon-large"></span></a>
+    </div><!-- 
+     --><div class="icon-button-wrapper">
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-food icon-large"></span></a>
+    </div><!-- 
+     --><div class="icon-button-wrapper">
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-power icon-large"></span></a>
+    </div><!-- 
+     --><div class="icon-button-wrapper">
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-basket icon-large"></span></a>
+    </div><!-- 
+ --></div>
+<!-- DO NOT COMMENT, REINDENT, FORMAT THIS SECTION -->
+
+
 <div class="grid">
     <figure class="effect-steve">
         <img src="/assets/check-in1.jpg" alt="img29" />
@@ -71,3 +84,4 @@
         </figcaption>
     </figure>
 </div>
+</section>

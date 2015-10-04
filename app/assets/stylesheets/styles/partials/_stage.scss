@@ -1,23 +1,80 @@
+.step-title {
+    text-transform: uppercase;
+    font-family: Montserrat, Roboto, sans-serif;
+    margin-bottom: 5px;
+    &._alt {
+        font-size: 30px;
+    }
+}
+
+.step-description {
+    font-weight: 100;
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+
+.step-note {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.step-button {
+    min-width: 100px;
+    margin-top: 15px;
+}
+
 #stage-advice {
     background: #e8e8e8;
+    text-align: left;
+    padding: 25px 0 15px;
+}
+
+.stage-nearby {
+    background-color: white;
+    text-align: left;
+    padding-top: 30px;
 }
 
 .icon-group {
-    margin: 20px auto;
+    margin: 0;
+    height: 91px;
+    div:nth-child(2n) {
+        background: #eee;
+    }
+    div:nth-child(2n+1) {
+        background: #ddd;
+    }
 }
 
+// .icon-button-wrapper {
+//     display: inline-block;
+//     margin: 0 10px;
+// }
+
 .icon-button-wrapper {
+    margin: 0;
+    width: 25%;
     display: inline-block;
-    margin: 0 10px;
+    // background-color: #eee;
+    @include aspect-ratio(".btn", 1, 1);
+    @include totally-center-child(".btn");
 }
 
 .btn-circle {
-    width: $button-floating-size*1.5;
-  height: $button-floating-size*1.5;
-  line-height: $button-floating-size;
+    width: 91px;
+  height: 91px;
+  line-height: 91px;
   padding: 0;
   background-color: $button-color;
-  border-radius: 50%;
+  >.icon:before {
+    color: #424242;
+  }
+}
+
+.transparent_alt {
+    @extend .transparent;
+    box-shadow: none;
 }
 
 /* Common style */
