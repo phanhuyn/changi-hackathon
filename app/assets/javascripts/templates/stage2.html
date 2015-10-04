@@ -1,36 +1,56 @@
-<div id="stage-advice">
-    <div class="row">
-        <div class="col s12">
-            <div class="card ">
-                <div class="card-content black-text">
-                    <span class="card-title black-text">Arrival Gates</span>
-                    <p>Before {{checkinTime | date: 'hh:mm a'}}</p>
-                    <p>Terminal {{flight.terminal}} Gate {{flight.gate.id}}</p>
-                </div>
-                <div class="card-action">
-                	<a type="button" name="previous" class="previous action-button btn" ng-click="previousState()">Previous</a>
+<section id="stage-advice" class="step-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+                <h3 class="step-title">Arrival Hall</h3>
+                <h4 class="step-description">
+                    Let's get your journey with Changi from our friendly check-in row :)
+                </h4>
+                <h5 class="step-note">
+                    Before {{checkinTime | date: 'hh:mm a'}}
+                </h5>
+                <h5 class="step-note">
+                    Terminal {{flight.terminal}} Gate {{flight.gate.id}}
+                </h5>
+            </div>
+            <div class="col s12">
+                <div class="card-action step-button">
+                    <a type="button" name="previous" class="previous action-button btn" ng-click="previousState()">Previous</a>
                     <a type="button" name="next" class="next action-button btn" ng-click="nextState()">Next
                     </a>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- recommendation icon group -->
-<div class="icon-group">
-        <div class="icon-button-wrapper">
-            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-bed icon-large"></span></a>
-        </div>
-        <div class="icon-button-wrapper">
-            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-food icon-large"></span></a>
-        </div>
-        <div class="icon-button-wrapper">
-            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-power icon-large"></span></a>
-        </div>
-        <div class="icon-button-wrapper">
-            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-basket icon-large"></span></a>
-        </div>
-</div>
+
+<section class="stage-nearby" id="stage-nearby">
+    <div class="container">
+        <h3 class="step-title _alt">You may like this</h3>
+    <h4 class="step-description _alt">
+        Some very interesting places are just very near to you.
+    </h4>
+    </div>
+    
+<!-- DO NOT COMMENT, REINDENT, FORMAT THIS SECTION -->
+    <div class="icon-group">
+    <div class="icon-button-wrapper">
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-bed icon-large"></span></a>
+    </div><!-- 
+     --><div class="icon-button-wrapper">
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-food icon-large"></span></a>
+    </div><!-- 
+     --><div class="icon-button-wrapper">
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-power icon-large"></span></a>
+    </div><!-- 
+     --><div class="icon-button-wrapper">
+        <a class="btn btn-circle waves-effect waves-light transparent_alt"><span class="icon icon-basket icon-large"></span></a>
+    </div><!-- 
+ --></div>
+<!-- DO NOT COMMENT, REINDENT, FORMAT THIS SECTION -->
+
+
 <div class="grid">
     <figure class="effect-steve">
         <img src="/assets/check-in1.jpg" alt="img29" />
@@ -64,6 +84,8 @@
             <a href="#">View more</a>
         </figcaption>
     </figure>
-
 </div>
+</section>
 
+
+               
