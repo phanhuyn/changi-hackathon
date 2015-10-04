@@ -1,19 +1,31 @@
-<div id="stage-advice">
-    <div class="row">
-        <div class="col s12">
-            <div class="card ">
-                <div class="card-content black-text">
-                    <span class="card-title black-text">Check in</span>
-                    <p>Before {{checkinTime | date: 'hh:mm a'}}</p>
-                    <p>Terminal {{flight.terminal}} Gate {{flight.gate.id}}</p>
-                </div>
-                <div class="card-action">
-                    <a href="#">Find out more</a>
-                </div>
+<section id="stage-advice" class="step-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col s12 m9">
+                <h3 class="text-bold shadow">Check In</h3>
+                <h4 class="text-light">
+                    Let's get your journey with Changi from our friendly check-in row :)
+                </h4>
+                <h5>
+                    Before {{checkinTime | date: 'hh:mm a'}}
+                </h5>
+                <h5>
+                    Terminal {{flight.terminal}} Gate {{flight.gate.id}}
+                </h5>
+                <!-- <div class="card ">
+                    <div class="card-content black-text">
+                        <span class="card-title black-text">Check in</span>
+                        <p>Before {{checkinTime | date: 'hh:mm a'}}</p>
+                        <p>Terminal {{flight.terminal}} Gate {{flight.gate.id}}</p>
+                    </div>
+                    <div class="card-action">
+                        <a href="#">Find out more</a>
+                    </div>
+                </div> -->
             </div>
         </div>
     </div>
-</div>
+</section>
 <!-- recommendation icon group -->
 <div class="icon-group">
     <div class="icon-button-wrapper">
