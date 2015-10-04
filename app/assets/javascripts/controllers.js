@@ -116,7 +116,7 @@
                     console.log("FLIGHT number on cookies is not valid");
                 });
             }
-            $scope.flightNumber = "QZ375";
+            $scope.flightNumber = "BR216";
             $scope.findFlight = function() {
                 Flight.query({flight_number: $scope.flightNumber}, function(flight){
                     console.log(flight[0]);
