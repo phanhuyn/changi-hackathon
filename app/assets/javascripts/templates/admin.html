@@ -1,13 +1,19 @@
 <div ng-controller='AdminController'>
     <div class="row">
-        <div class='message-text'>
-            <div class="input-field col s5">
-                <input type="text" ng-model='flight_id'>
-                <label for="">Flight id</label>
+    <div class="col l6">
+            <div class="row">
+                <div class="col l9">
+                    <div class="input-field">
+                        <input type="text" ng-model='flight_id'>
+                        <label for="">Flight id</label>
+                    </div>
+                </div>
+                <div class="col l3">
+                    <button class="btn waves-effect waves-light message-send s2" type="submit" name="action" ng-click='getFlight()'>OK
+                        <i class="material-icons right">send</i>
+                    </button>
+                </div>
             </div>
-            <button class="btn waves-effect waves-light message-send s2" type="submit" name="action" ng-click='getFlight()'>OK
-            <i class="material-icons right">send</i>
-        </button>
         </div>
     </div>
 </div>
