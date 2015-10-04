@@ -34,13 +34,13 @@
                     <li ng-class="{true: 'active'}[state>=4]">Boarding</li>
                 </ul>
                 <!-- fieldsets -->
-                <fieldset ng-show="state==1">
+                <fieldset class="step-section" ng-show="state==1">
                     <a type="button" name="next" class="next action-button btn" ng-click="nextState()">Next
                     </a>
                     <div ng-include="'stage1.html'"></div>
                 </fieldset>
 
-                <fieldset ng-show="state==2">
+                <fieldset class="step-section" ng-show="state==2">
                     <a type="button" name="previous" class="previous action-button btn" ng-click="previousState()">Previous</a>
                     <a type="button" name="next" class="next action-button btn" value="Next" ng-click="nextState()">
                     Next
@@ -48,13 +48,13 @@
                     <div ng-include="'stage2.html'"></div>
                 </fieldset>
 
-                <fieldset ng-show="state == 3">
+                <fieldset class="step-section" ng-show="state == 3">
                     <a type="button" name="previous" class="previous action-button btn" ng-click="previousState()">Previous</a>
                     <a type="button" name="next" class="next action-button btn" value="Next" ng-click="nextState()">Next</a>
                     <div ng-include="'stage3.html'"></div>
                 </fieldset>
 
-                <fieldset ng-show="state == 4">
+                <fieldset class="step-section" ng-show="state == 4">
                     <a type="button" name="previous" class="previous action-button btn" value="Previous" ng-click="previousState()">Previous</a>
                     <div ng-include="'stage4.html'"></div>
                 </fieldset>
