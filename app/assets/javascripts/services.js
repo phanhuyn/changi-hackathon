@@ -1,6 +1,6 @@
 (function() {
     angular.module('changi').factory('Flight', function($resource){
-        return $resource('/flights.json');
+        return $resource('/flights/:id');
     });
     angular.module('changi').factory('ChatBox', function($resource){
         return $resource('/chat_boxes.json');

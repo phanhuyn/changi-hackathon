@@ -16,6 +16,11 @@
               url: '/test',
               templateUrl: 'test.html',
               controller: 'MainController'
+            })
+            .state('admin', {
+              url: '/admin',
+              templateUrl: 'admin.html',
+              controller: 'AdminController'
             });
             $urlRouterProvider.otherwise('home');
         }]);

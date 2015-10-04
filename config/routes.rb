@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :users, defaults: {format: :json}
   resources :chat_boxes, defaults: {format: :json}
   resources :flights, defaults: {format: :json}
+  post '/delay', to: 'flights#delay'
   root to: 'application#angular'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

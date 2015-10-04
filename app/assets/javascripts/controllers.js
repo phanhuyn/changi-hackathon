@@ -3,6 +3,8 @@
         ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout', '$state',
         function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout, $state){
         $scope.flight = FlightService.getFlight();
+        $scope.notice = null;
+        $scope.noticement = '';
         if($scope.flight == null){
             $state.go('home');
         }
@@ -27,11 +29,24 @@
             $scope.step = step;
             console.log(step);
         }
-        // poll();
+        poll();
         function poll() {
-            console.log("Tick");
-            $timeout(poll, 2000);
+            Flight.get({id: $scope.flight.id}, function(newflight){
+                console.log(newflight);
+                if(newflight.gate_id != $scope.flight.gate_id){
+                    $scope.notice = true;
+                    $scope.noticement = "Attention: Your boarding gate has been changing from gate " 
+                                        + $scope.flight.gate.name + 'to gate ' + newflight.gate.name; 
+                }
+                if(newflight.delay!=null){
+                    $scope.notice = true;
+                    $scope.noticement = "Unfortunatel, your flight has been delayed until " 
+                                        + newflight.scheduled; 
+                }
+                $timeout(poll, 10000);
+            });
         }
+
     }]);
     angular.module('changi').controller('ChatBoxController', 
         ['$scope', 'FlightService', 'ChatBox', 'Comment', 'User', '$timeout', 'Utils',

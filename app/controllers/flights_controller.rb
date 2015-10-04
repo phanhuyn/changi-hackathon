@@ -69,6 +69,11 @@ class FlightsController < ApplicationController
     end
   end
 
+  def delay
+    Rails.logger.info "Flight ID= " + params["flight_id"]
+    Rails.logger.info "Delay time= " + params["delay"]
+    render json: {"success": "true"}
+  end
   # DELETE /flights/1
   # DELETE /flights/1.json
   def destroy
