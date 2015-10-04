@@ -3,11 +3,11 @@
         ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout', '$state',
         function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout, $state){
         $scope.flight = FlightService.getFlight();
-        $scope.notice = false;
-        $scope.noticement = '';
         if($scope.flight == null){
             $state.go('home');
         }
+        $scope.notice = false;
+        $scope.noticement = '';
         var scheduled = $scope.flight.scheduled;
         var date = new Date(scheduled);
         var checkinTime = new Date(scheduled);
@@ -30,18 +30,27 @@
             console.log(step);
         }
         poll();
+        console.log($scope.flight);
         function poll() {
             Flight.get({id: $scope.flight.id}, function(newflight){
                 console.log(newflight);
-                if(newflight.gate_id != $scope.flight.gate_id){
+                if(newflight.gate.id != $scope.flight.gate.id){
+                    console.log("Changing gate");
                     $scope.notice = true;
-                    $scope.noticement = "Attention: Your boarding gate has been changing from gate " 
-                                        + $scope.flight.gate.name + 'to gate ' + newflight.gate.name; 
+                    $scope.noticement = "ATTENTION: YOUR BOARDING GATE HAS BEEN CHANGED FROM GATE " 
+                                        + $scope.flight.gate.name + 'TO GATE ' + newflight.gate.name + 
+                                        "! WE ARE SORRY FOR THE INCONVENIENCE"; 
                 }
                 if(newflight.delay!=null){
+                    console.log("deLAYING");
                     $scope.notice = true;
-                    $scope.noticement = "Unfortunatel, your flight has been delayed until " 
-                                        + newflight.scheduled; 
+                    var time = new Date(newflight.scheduled);
+                    var h = time.getHours();
+                    var m = time.getMinutes();
+                    var s = time.getSeconds();
+                    var format = h + ":" +m;
+                    $scope.noticement = "UNFORTUNATELY YOUR FLIGHT HAS BEEN DELAYED UNTIL " 
+                                        + format + "! WE ARE SORRY FOR YOUR INCONVENIENCE"; 
                 }
                 $timeout(poll, 10000);
             });
