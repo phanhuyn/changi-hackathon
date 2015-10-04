@@ -14,9 +14,8 @@
         $scope.hide = true;
         $scope.state = 1;
         $scope.nextState = function() {
-            console.log('in nextState()');
-            console.log($scope.state);
             $scope.state++;
+            console.log($scope.state);
         }
         $scope.previousState = function() {
             $scope.state--;
