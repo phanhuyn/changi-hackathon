@@ -1,16 +1,19 @@
 (function() {
     angular.module('changi').controller('MainController', 
-        ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout', '$state',
-        function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout, $state){
+        ['$scope', 'Flight', 'ChatService', 'ChatBox', '$stateParams', 'FlightService','$timeout', '$state','$filter',
+        function ($scope, Flight, ChatService, ChatBox, $stateParams, FlightService, $timeout, $state, $filter){
         $scope.flight = FlightService.getFlight();
         if($scope.flight == null){
             $state.go('home');
         }
         $scope.notice = false;
         $scope.noticement = '';
-        var scheduled = $scope.flight.scheduled;
-        var date = new Date(scheduled);
-        var checkinTime = new Date(scheduled);
+        if($scope.flight.delay == null)
+            $scope.departureTime = $scope.flight.scheduled;
+        else
+            $scope.departureTime = $scope.flight.delay;
+        var date = new Date($scope.departureTime);
+        var checkinTime = new Date($scope.departureTime);
         checkinTime.setHours(date.getHours()-2);
         $scope.checkinTime = checkinTime;
         $scope.hide = true;
@@ -30,7 +33,6 @@
             console.log(step);
         }
         poll();
-        console.log($scope.flight);
         function poll() {
             Flight.get({id: $scope.flight.id}, function(newflight){
                 console.log(newflight);
@@ -44,13 +46,11 @@
                 if(newflight.delay!=null){
                     console.log("deLAYING");
                     $scope.notice = true;
-                    var time = new Date(newflight.scheduled);
-                    var h = time.getHours();
-                    var m = time.getMinutes();
-                    var s = time.getSeconds();
-                    var format = h + ":" +m;
+                    var time = new Date(newflight.delay);
+                    var newtime = $filter('date')(time, 'hh:mm a');
                     $scope.noticement = "UNFORTUNATELY YOUR FLIGHT HAS BEEN DELAYED UNTIL " 
-                                        + format + "! WE ARE SORRY FOR YOUR INCONVENIENCE"; 
+                                        + newtime + "! WE ARE SORRY FOR YOUR INCONVENIENCE"; 
+                    FlightService.setFlight(newflight);
                 }
                 $timeout(poll, 10000);
             });
