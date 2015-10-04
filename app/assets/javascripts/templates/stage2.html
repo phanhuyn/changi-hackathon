@@ -1,1 +1,69 @@
-<h1> Stage 2 </h1>
+<div id="stage-advice">
+    <div class="row">
+        <div class="col s12">
+            <div class="card ">
+                <div class="card-content black-text">
+                    <span class="card-title black-text">Arrival Gates</span>
+                    <p>Before {{checkinTime | date: 'hh:mm a'}}</p>
+                    <p>Terminal {{flight.terminal}} Gate {{flight.gate.id}}</p>
+                </div>
+                <div class="card-action">
+                	<a type="button" name="previous" class="previous action-button btn" ng-click="previousState()">Previous</a>
+                    <a type="button" name="next" class="next action-button btn" ng-click="nextState()">Next
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- recommendation icon group -->
+<div class="icon-group">
+        <div class="icon-button-wrapper">
+            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-bed icon-large"></span></a>
+        </div>
+        <div class="icon-button-wrapper">
+            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-food icon-large"></span></a>
+        </div>
+        <div class="icon-button-wrapper">
+            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-power icon-large"></span></a>
+        </div>
+        <div class="icon-button-wrapper">
+            <a class="btn btn-circle waves-effect waves-light green"><span class="icon icon-basket icon-large"></span></a>
+        </div>
+</div>
+<div class="grid">
+    <figure class="effect-steve">
+        <img src="/assets/check-in1.jpg" alt="img29" />
+        <figcaption>
+            <h2>Cactus <span>Garden</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="#">View more</a>
+        </figcaption>
+    </figure>
+    <figure class="effect-steve">
+        <img src="/assets/check-in2.jpg" alt="img33" />
+        <figcaption>
+            <h2>Swimming <span>Pool</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="#">View more</a>
+        </figcaption>
+    </figure>
+    <figure class="effect-steve">
+        <img src="/assets/check-in3.jpg" alt="img33" />
+        <figcaption>
+            <h2>Movie <span>Theather</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="#">View more</a>
+        </figcaption>
+    </figure>
+    <figure class="effect-steve">
+        <img src="/assets/check-in4.jpg" alt="img33" />
+        <figcaption>
+            <h2>Cactus <span>Garden</span></h2>
+            <p>Steve was afraid of the Boogieman.</p>
+            <a href="#">View more</a>
+        </figcaption>
+    </figure>
+
+</div>
+
